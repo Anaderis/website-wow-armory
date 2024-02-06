@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'acherus_grotesque_regularRg';
+    src: url('polices/acherusgrotesque-regular-webfont.eot');
+    src: url('polices/acherusgrotesque-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('polices/acherusgrotesque-regular-webfont.woff2') format('woff2'),
+         url('polices/acherusgrotesque-regular-webfont.woff') format('woff'),
+         url('polices/acherusgrotesque-regular-webfont.ttf') format('truetype'),
+         url('polices/acherusgrotesque-regular-webfont.svg#acherus_grotesque_regularRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body {
+    font-size:medium;
+    font-family: 'acherus_grotesque_regularRg','calibri','serif';
+    background-color:#DED9D9;
+    /*background-size: cover;*/
+}
+
+.login {
+
+    float: right;
+}
+
+    
+
+form input{
+    width:10%;
+    border-radius: 15px;
+
+}
+
+.logo{
+    display:block;
+    width:20%;
+    margin:auto;
+
+    
+}
+
+#menus {
+    background-color: white;
+    font-size:larger;
+    
+}
+
+#menus ul {
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    list-style:none;
+    padding:2%;
+    
+
+}
+
+
+header {
+    background-color:white;
+    padding:3%;
+}
+
+
+aside {
+    width:30%;
+    float:right;
+    background-color: darkgrey;
+    padding-left:20px;
+}
+
+article {
+    width:60%;
+    margin-left:5%;
+}
+
+article div {
+    background-color: white;
+    margin-bottom:10px;
+    padding:3%;
+}
+
+nav a:hover {
+
+    font-weight:bold;
+    border-top:2px solid black;
+    
+}
+
+
+
+
+
+
+
