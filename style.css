@@ -21,24 +21,6 @@ body {
 
 /* header */
 
-header {
-    background-color:white;
-    padding:1%;
-}
-
-.login {
-
-    float: right;
-    background-color: black;
-    font-size:large;
-    color: white;
-    padding: 12px 20px;
-    margin: 1% 0px;
-    border: none;
-    border-radius: 4px;
-    cursor:pointer;
-}
-
     
 
 form input{
@@ -49,11 +31,8 @@ form input{
 
 .logo{
     display:block;
-    width: 175px;
-    height: 150px;
-    margin:auto;
-
-    
+    width: 30%;
+    height: 20%;
 }
 
 /* menu de navigation */ 
@@ -67,9 +46,8 @@ form input{
 #menus ul {
     display:flex;
     justify-content:space-around;
-    align-items: center;
+    align-items:center;
     list-style:none;
-    padding:2%;
     color:black;
     
 
@@ -79,22 +57,59 @@ form input{
     color:black;
     text-decoration: none;
 }
+nav{
+    border-radius: 10px;
+}
+nav a {
+    --b: 0.1em;   /* the thickness of the line */
+    --c: #000000; /* the color*/ 
 
+    color: #0000;
+    padding-block: var(--b);
+    background: 
+      linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .2s calc(.2s - var(--_s,0s));
+  }
 nav a:hover {
-
-    font-weight:bold;
-    border-top:2px solid black;
-    border-bottom: 2px solid black;
-    color:black;
-    
+    --_p: 100%;
+    --_s: .2s;
+  }
+.login:hover {
+transition: 0.4s ease-in-out;
+background: #afafaf;
 }
 
+.login:hover svg {
+stroke-dashoffset: -480;
+}
 
+.login span {
+color: rgb(0, 0, 0);
+font-size: 18px;
+font-weight: 100;
+}
+
+.login {
+width: 80px;
+height: 50px;
+cursor: pointer;
+background: transparent;
+border: 1px solid #000000;
+transition: 0.5s ease-in-out;
+float: right;
+font-size:large;
+color: rgb(0, 0, 0);
+border-radius: 6px;
+}
 /* article */
 
 article {
     width:60%;
     margin-left:5%;
+    margin-right: 15px;
 }
 
 article div {
@@ -117,21 +132,30 @@ article div {
 
 
 /* aside */
-
+.actu{
+    display: flex;
+    flex-direction: row;
+}
 aside {
     text-align: center;
     color:white;
     width:30%;
-    float:right;
-    background-color: #164446;
-    padding:10px;
+    display: flex;
+    flex-direction: column;
     margin-right: 1%;
+}
+.aside1{
+    margin-bottom: 15px;
+    background-color: #164446;
+}
+.aside2{
+    background-color: #164446;
 }
 
 
 
 .nain {
-    display:block;
+    display:flex;
     width:70%;
     margin:auto;
     margin-bottom: 10px;
