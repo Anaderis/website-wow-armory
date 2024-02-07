@@ -176,8 +176,8 @@ aside {
     cursor:pointer;
 }
 
-
-
-
-
-
+img {
+    display: block;
+    width: 60%;
+    margin: auto;
+}
