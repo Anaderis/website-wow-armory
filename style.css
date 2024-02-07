@@ -19,9 +19,24 @@ body {
     /*background-size: cover;*/
 }
 
+/* header */
+
+header {
+    background-color:white;
+    padding:1%;
+}
+
 .login {
 
     float: right;
+    background-color: black;
+    font-size:large;
+    color: white;
+    padding: 12px 20px;
+    margin: 1% 0px;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
 }
 
     
@@ -40,6 +55,8 @@ form input{
     
 }
 
+/* menu de navigation */ 
+
 #menus {
     background-color: white;
     font-size:larger;
@@ -52,23 +69,26 @@ form input{
     align-items: center;
     list-style:none;
     padding:2%;
+    color:black;
     
 
 }
 
+#menus ul a {
+    color:black;
+    text-decoration: none;
+}
 
-header {
-    background-color:white;
-    padding:3%;
+nav a:hover {
+
+    font-weight:bold;
+    border-top:2px solid black;
+    color:black;
+    
 }
 
 
-aside {
-    width:30%;
-    float:right;
-    background-color: darkgrey;
-    padding-left:20px;
-}
+/* article */
 
 article {
     width:60%;
@@ -81,13 +101,54 @@ article div {
     padding:3%;
 }
 
-nav a:hover {
-
-    font-weight:bold;
-    border-top:2px solid black;
-    
+.invincible {
+    width:40%;
+    margin-left:10px;
+}
+.article1 {
+    display:flex;
+    flex-direction: row;
+    justify-content:right;
+    flex-wrap: wrap;
 }
 
+
+
+/* aside */
+
+aside {
+    text-align: center;
+    color:white;
+    width:30%;
+    float:right;
+    background-color: #164446;
+    padding:10px;
+    margin-right: 1%;
+}
+
+
+
+.nain {
+    display:block;
+    width:70%;
+    margin:auto;
+    margin-bottom: 10px;
+    
+
+}
+
+.button-aside {
+    
+    display:block;
+    background-color:white;
+    font-size:medium;
+    color: black;
+    padding: 12px 20px;
+    margin:auto;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
+}
 
 
 
