@@ -29,16 +29,20 @@ form input{
 
 }
 
+.imgHeader{
+    width: 100%;
+}
+
+
+/* menu de navigation */ 
 .logo{
-    display:block;
+    float: left;
     width: 30%;
     height: 20%;
 }
 
-/* menu de navigation */ 
-
 #menus {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     font-size:larger;
     
 }
@@ -57,9 +61,12 @@ form input{
     color:black;
     text-decoration: none;
 }
+
+
 nav{
     border-radius: 10px;
 }
+
 nav a {
     --b: 0.1em;   /* the thickness of the line */
     --c: #000000; /* the color*/ 
@@ -73,13 +80,17 @@ nav a {
             background-clip: text,padding-box;
     transition: .3s var(--_s,0s) linear,background-size .2s calc(.2s - var(--_s,0s));
   }
+
 nav a:hover {
     --_p: 100%;
     --_s: .2s;
   }
+
+  /* login */
+
 .login:hover {
-transition: 0.4s ease-in-out;
-background: #afafaf;
+transition: 0.2s ease-in-out;
+background: #303030;
 }
 
 .login:hover svg {
@@ -96,14 +107,16 @@ font-weight: 100;
 width: 80px;
 height: 50px;
 cursor: pointer;
-background: transparent;
+background:black;
 border: 1px solid #000000;
 transition: 0.5s ease-in-out;
 float: right;
 font-size:large;
-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 border-radius: 6px;
 }
+
+
 /* article */
 
 article {
