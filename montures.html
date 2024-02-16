@@ -1,12 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+
+<html lang="fr">
+  <head>
     <link rel="icon" type="image/x-icon" href="./Assets/icon.png"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vos Montures</title>
-</head>
-<body>
+    <meta charset="utf-8">
+    <title>WoW Collection</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <!-- Footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    
+
+    <!-- Police -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+  </head>
+
+<body>  
+
+    <header>
+
+    
+        <nav id="menus">
+            
+          
+          <ul>
+            <li><a href="./wow-armory.html"> <img src="./Assets/logo.png" alt="World of warcraft"class="logo"></a></li>
+            <li><a href="./montures.html">Montures </a></li>
+            <li><a href="./Equipements.html">Equipements</a></li>
+            <li><a href="./map.html">Carte</a></li>
+            <li><a href="./MonCompte.html">Mon compte</a></li>
+            <li><input type="text" name="text" class="search" placeholder="Recherche"></li>
+            <li><input type="submit" name="submit" class="submit" value="Search"></li>
+            <li><a href="./login.html"><button  class="login"  type="button">Login</button></a></li>
+          </ul>
+          
+        </nav>
+    
+        <div class="imgHeaderMount">
+
+            <form action='info.php' method='GET'>
+                <label for="nom">Mount name :</label>
+                <input type='text' name='nom' value=''>
+    
+                <label for="difficulte">Difficulty :</label>
+                <input type='text' name='difficulte' value=''>
+                <button type='submit'>Search</button>
+            </form>
+          
+        </div>
+    
+      </header>
+
+      <section>
+     
+    
+      </section>
     
 </body>
 </html>
