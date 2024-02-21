@@ -109,7 +109,7 @@ nav a:hover {
   /* login */
 
 .login:hover {
-transition: 0.2s ease-in-out;
+transition: 0.5s ease-in-out;
 background: #303030;
 }
 
@@ -138,16 +138,7 @@ border-radius: 6px;
 
 /*----------------------------------------Page d'accueil---------------------------------------------------------*/
 
-.imgHeaderMount {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-image: url(Assets/background.avif);
-    background-size: cover;
-    height:600px;
-    width:100%;
-}
+
 
 /* article */
 
@@ -232,7 +223,43 @@ aside {
 
 /*----------------------------------------Page montures---------------------------------------------------------*/
 
+/* Image du Header */
+
+.imgHeaderMount {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Assets/header-mounts.png);
+    background-size: cover;
+    height:600px;
+    width:100%;
+}
+
 /* bloc des filtres */
+
+
+    
+
+
+.filter {
+    background-color: yellow;
+    flex-direction: column;
+
+    /* flex:1; */
+
+
+}
+
+.filter2 {
+    background-color: blue;
+    flex:2;
+    /* flex-direction: column;     */
+    
+
+}
+
+
 
 
 

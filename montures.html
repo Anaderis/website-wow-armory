@@ -45,12 +45,27 @@
         <div class="imgHeaderMount">
 
             <form action='info.php' method='GET'>
+
+              <div class="filter">
                 <label for="nom">Mount name :</label>
                 <input type='text' name='nom' value=''>
     
                 <label for="difficulte">Difficulty :</label>
-                <input type='text' name='difficulte' value=''>
-                <button type='submit'>Search</button>
+                <input type='text' name='difficulte' placeholder="All difficulties" value=''>
+
+                <label for="faction">Factions :</label>
+                <input type='text' name='faction' placeholder="All factions" value=''>
+              </div>
+
+              <!-- <div class="filter2">
+                <label for="source">Sources :</label>
+                <input type='text' name='source' placeholder="All sources" value=''>
+
+                <label for="extension">Extensions :</label>
+                <input type='text' name='extension' placeholder="All extensions" value=''>
+              </div> -->
+
+                <button type='submit' class="login">Search</button>
             </form>
           
         </div>
