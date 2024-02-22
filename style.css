@@ -239,11 +239,12 @@ aside {
 
 .formMount {
     display:flex;
-    flex-direction:row;
-    background-color: green;
+    /* justify-content: center; */
+    /* flex-direction:row; */
+    background-color: purple;
     font-size: larger;
     width:100%;
-    justify-content:center;
+    height:400px;
 
 }
     
@@ -253,6 +254,7 @@ aside {
     background-color: pink;
     flex-direction: column;
     flex:1;
+
 }
 
 .filter2 {
@@ -263,10 +265,17 @@ aside {
 }
 
 .searchMount {
-    background-color: pink;
-    float:right;
+    background-color: blue;
+    /* float:right; */
 
 }
+
+input, label {
+    background-color: brown;
+    size: 2em;
+}
+
+
 
 
 
