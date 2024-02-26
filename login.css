@@ -53,12 +53,13 @@ img:hover{
     gap: 6px;
     margin-bottom: 10%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 35px 500px;
+    grid-template-rows: 35px 400px;
     opacity: 0.8;
 }
 
 .loginConteneur div{
     background-color: white;
+    min-width: 150px;
 }
 
 .box{
@@ -119,36 +120,61 @@ img:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
     margin:2% 3% 0% 3%;
 }
 
 /* loginholder */
 
 .loginholder{
-    margin-top: 10%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .divloginholder{
-    margin-top: 3%;
+    margin-top:2%;
 }
 
-.textloginholder{
-    
+.loginholder input[type="text"],
+.loginholder input[type="password"]{
+    opacity: 1;
+    display: block;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 13px 18px;
+    /* margin: 20px 0 0 0; */
+    font-size: 0.8em;
+    border-radius: 100px;
+    background: #3c3c3c;
+    color: #fff;
 }
 
-.username{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.loginholder input[type=submit]{
+    border: 0;
+    outline: 0;
+    width: 25%;
+    background-color: #000000;
+    color: white;
+    padding: 13px;
+    margin: 50px 0 0 0;
+    border-radius: 500px;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-.password{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.loginholder input[type=submit]:hover{
+    --s: 100%;   /* the size of the image */
+    --b: 2px;     /* the border thickness*/
+    --g: 4px;    /* the gap */
+    --c: #000000; /* the color */
+    cursor: pointer;
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+    transition: 0.2s ease-in-out;
 }
 
 /* Ombre */
@@ -213,14 +239,6 @@ img:hover{
 
 .footer-basic .social > a:hover {
     opacity:0.9;
-    --s: 100%;   /* the size of the image */
-    --b: 2px;     /* the border thickness*/
-    --g: 4px;    /* the gap */
-    --c: #000000; /* the color */
-    cursor: pointer;
-    outline: var(--b) solid var(--c);
-    outline-offset: var(--g);
-    transition: 0.1s ease-in-out;
 }
 
 .footer-basic .copyright {
