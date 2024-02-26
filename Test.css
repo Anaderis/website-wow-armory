@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -56,44 +55,47 @@ img:hover{
 
 /* BoxLogin */
 .loginConteneur{
-    margin-top: 5%;
-    margin-bottom: 15%;
-    opacity: 0.8;
     display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
-    grid-template-rows: 35px 450px;
     gap: 6px;
+    margin-bottom: 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 35px 400px;
+    opacity: 0.8;
 }
 
-
-
-
-/* .loginConteneur div{
-    min-width: 150px;
-    max-width: 375px;
-} */
-.backgroundBlanc{
+.loginConteneur div{
     background-color: white;
+    min-width: 150px;
 }
 
-.loginhtml .box{
+.box{
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column-start: 3;
+    grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
 }
 
 .loginbutton{
     border-top-left-radius: 12px;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size:22px;
+}
+
+.loginbutton input[type=submit]{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .loginbutton:hover{
@@ -109,17 +111,17 @@ img:hover{
 
 .registerbutton{
     border-top-right-radius: 12px;
-    grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
     display: flex;
+    font-size:22px;
     justify-content: center;
     align-items: center;
 }
 
-.registerbutton input[type=radio],
-.loginbutton input[type=radio]{
+.registerbutton input[type=submit]{
     border: 0;
     outline: 0;
     background-color: transparent;
@@ -144,27 +146,6 @@ img:hover{
     align-items: center;
     /* border-bottom: 2px solid black; */
     margin:2% 3% 0% 3%;
-}
-
-/* box register */
-
-.registerConteneur{
-    margin-top: 5%;
-    margin-bottom: 15%;
-    opacity: 0.8;
-    display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
-    grid-template-rows: 35px 500px;
-    gap: 6px;
-}
-
-.registerhtml .box{
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
 }
 
 /* loginholder */
@@ -196,7 +177,7 @@ img:hover{
     color: #fff;
 }
 
-.loginhtml .loginholder input[type=submit]{
+.loginholder input[type=submit]{
     border: 0;
     outline: 0;
     width: 25%;
@@ -204,19 +185,6 @@ img:hover{
     color: white;
     padding: 13px;
     margin: 50px 0 0 0;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.registerhtml .loginholder input[type=submit]{
-    border: 0;
-    outline: 0;
-    width: 25%;
-    background-color: #000000;
-    color: white;
-    padding: 13px;
-    margin: 25px 0 0 0;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -233,50 +201,6 @@ img:hover{
     transition: 0.2s ease-in-out;
 }
 
-.loginhtml .login,
-.loginhtml .register,
-.registerhtml .login,
-.registerhtml .register,
-.login-form .group .check{
-	display:none;
-}
-
-.loginhtml .login:checked + .tab,
-.loginhtml .register:checked + .tab,
-.registerhtml .login:checked + .tab,
-.registerhtml .register:checked + .tab{
-	color:#fff;
-	border-color:#1161ee;
-}
-
-.loginhtml .sign-in-htm,
-.loginhtml .sign-up-htm{
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	position:absolute;
-	transform:rotateY(180deg);
-	backface-visibility:hidden;
-	transition:all .4s linear;
-}
-
-.loginhtml .hrloginconteneur{
-    margin-top: 10%;
-    width: 75%;
-	border-top: 1px solid black;
-}
-.registerhtml .hrregisterconteneur{
-    margin-top: 5%;
-    width: 75%;
-	border-top: 1px solid black;
-}
-
-.footerbox{
-    margin-top: 10%;
-    text-align:center;
-}
-
 /* Ombre */
 .ombre{
     box-shadow: 8px 10px 2px 1px rgba(58, 58, 58, 0.2);
@@ -284,9 +208,9 @@ img:hover{
 .text-ombre{
     text-shadow: 2px 2px 2px rgb(160, 160, 160);
 }
+/* logintest */
 
-
-.login-wrap{
+/* .login-wrap{
 	width:100%;
 	margin:auto;
 	max-width:525px;
@@ -294,14 +218,14 @@ img:hover{
 	position:relative;
 	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-}
-.login-html{
+} */
+/* .login-html{
 	width:100%;
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
 	background:rgba(40,57,101,.9);
-}
+} */
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
 	top:0;
@@ -318,24 +242,24 @@ img:hover{
 .login-form .group .check{
 	display:none;
 }
-.login-html .tab,
+/* .login-html .tab,
 .login-form .group .label,
 .login-form .group .button{
 	text-transform:uppercase;
-}
-.login-html .tab{
+} */
+/* .login-html .tab{
 	font-size:22px;
 	margin-right:15px;
 	padding-bottom:5px;
 	margin:0 15px 10px 0;
 	display:inline-block;
 	border-bottom:2px solid transparent;
-}
-.login-html .sign-in:checked + .tab,
+} */
+/* .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
 	color:#fff;
 	border-color:#1161ee;
-}
+} */
 .login-form{
 	min-height:345px;
 	position:relative;
@@ -362,13 +286,6 @@ img:hover{
 .login-form .group input[data-type="password"]{
 	text-security:circle;
 	-webkit-text-security:circle;
-}
-.login-form .group .label{
-	color:#aaa;
-	font-size:12px;
-}
-.login-form .group .button{
-	background:#1161ee;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -425,3 +342,81 @@ img:hover{
 .foot-lnk{
 	text-align:center;
 }
+
+
+/* Footer */
+.footer-basic {
+    padding:40px 0;
+    background-color:#ffffff;
+    color:#4b4c4d;
+    border-radius: 8px;
+}
+
+.footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+
+.footer-basic li {
+    padding:0 10px;
+}
+
+.footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity:1;
+}
+
+.footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+    
+}
+
+.footer-basic .social > a:hover {
+    opacity:0.9;
+}
+
+.footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
