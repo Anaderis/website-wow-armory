@@ -38,7 +38,7 @@ form input{
 
 header {
     
-    
+
     width: 100%;
     margin-bottom:10px;
 }
@@ -78,7 +78,7 @@ header {
 
 
 nav{
-    width:99%;
+    width:100%;
     height:25%;
     border-radius: 10px; 
     margin:auto;
@@ -222,58 +222,54 @@ aside {
 
 /*----------------------------------------Page montures---------------------------------------------------------*/
 
-/* Image du Header */
-
-.imgHeaderMount {
-    display:flex;
-    justify-content:center;
-    align-items: end; 
-    background-image: url(Assets/header-mounts.png);
-    background-size: cover;
-    height:600px;
-    width:100%;
-    padding-bottom:1%;
-}
-
-/* bloc des filtres */
-
 .formMount {
     display:flex;
-    /* justify-content: center; */
-    /* flex-direction:row; */
-    background-color: purple;
-    font-size: larger;
-    width:100%;
-    height:400px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    background-image: url(/Assets/header-mounts.jpg);
+    background-size:cover;
+    height:500px;
 
 }
-    
-
 
 .filter {
-    background-color: pink;
+    display:flex;
+    flex:1;
     flex-direction: column;
-    flex:1;
-
-}
-
-.filter2 {
-    background-color: yellow;
-    flex:1;
+    align-items:center;
+    padding-bottom: 4%;
     
-
 }
 
-.searchMount {
-    background-color: blue;
-    /* float:right; */
-
+.filter input {
+    min-width: 400px;
+    padding-left:1%;
+    padding:1%;
+    opacity: 0.8;
+    /* color:white; */
 }
 
-input, label {
-    background-color: brown;
-    size: 2em;
+.filter label {
+    color:white;
+    font-size: 1em;
+    padding-top:1%;
 }
+
+.filter button {
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    background:black;
+    border: 1px solid #000000;
+    transition: 0.5s ease-in-out;
+    float: right;
+    font-size:large;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    margin-top:1%;
+}
+
 
 
 
