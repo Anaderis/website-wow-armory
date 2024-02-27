@@ -13,9 +13,6 @@ body{
     background-size: cover;
     height:auto;
     width:auto;
-    padding: 1%;
-    margin:0;
-	font:600 16px/18px 'Open Sans',sans-serif;
 }
 
 nav{
@@ -58,32 +55,38 @@ img:hover{
 .loginConteneur{
     margin-top: 5%;
     margin-bottom: 15%;
-    opacity: 0.8;
+    opacity: 0.8;  
+}
+
+.loginhtml{
     display: grid;
     grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
     grid-template-rows: 35px 450px;
     gap: 6px;
 }
 
-
-
-
-/* .loginConteneur div{
-    min-width: 150px;
-    max-width: 375px;
-} */
-.backgroundBlanc{
-    background-color: white;
-}
-
-.loginhtml .box{
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+.loginform{
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 2;
     grid-row-end: 3;
 }
+
+/* .loginConteneur div{
+    min-width: 150px;
+    max-width: 375px;
+} */
+
+.backgroundBlanc{
+    background-color: white;
+}
+
+.loginConteneur .loginhtml .loginform{
+    min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+} 
 
 .loginbutton{
     border-top-left-radius: 12px;
@@ -106,7 +109,6 @@ img:hover{
     transition: 0.2s ease-in-out;
 }
 
-
 .registerbutton{
     border-top-right-radius: 12px;
     grid-column-start: 5;
@@ -116,16 +118,6 @@ img:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.registerbutton input[type=radio],
-.loginbutton input[type=radio]{
-    border: 0;
-    outline: 0;
-    background-color: transparent;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
 }
 
 .registerbutton:hover{
@@ -146,27 +138,6 @@ img:hover{
     margin:2% 3% 0% 3%;
 }
 
-/* box register */
-
-.registerConteneur{
-    margin-top: 5%;
-    margin-bottom: 15%;
-    opacity: 0.8;
-    display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
-    grid-template-rows: 35px 500px;
-    gap: 6px;
-}
-
-.registerhtml .box{
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
 /* loginholder */
 
 .loginholder{
@@ -175,6 +146,7 @@ img:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 .divloginholder{
@@ -182,7 +154,8 @@ img:hover{
 }
 
 .loginholder input[type="text"],
-.loginholder input[type="password"]{
+.loginholder input[type="password"],
+.loginholder input[type="email"]{
     opacity: 1;
     display: block;
     border: none;
@@ -196,33 +169,34 @@ img:hover{
     color: #fff;
 }
 
-.loginhtml .loginholder input[type=submit]{
+.submitbuttonlogin input[type=submit]{
     border: 0;
     outline: 0;
-    width: 25%;
+    width: 100%;
     background-color: #000000;
     color: white;
-    padding: 13px;
-    margin: 50px 0 0 0;
+    padding: 13px 18px;
+    margin: 20% 0 0 0;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
 }
 
-.registerhtml .loginholder input[type=submit]{
+.submitbuttonregister input[type=submit]{
     border: 0;
     outline: 0;
-    width: 25%;
+    width: 100%;
     background-color: #000000;
     color: white;
-    padding: 13px;
-    margin: 25px 0 0 0;
+    padding: 13px 18px;
+    margin: 20% 0 0 0;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
 }
 
-.loginholder input[type=submit]:hover{
+.submitbuttonlogin input[type=submit]:hover,
+.submitbuttonregister input[type=submit]:hover{
     --s: 100%;   /* the size of the image */
     --b: 2px;     /* the border thickness*/
     --g: 4px;    /* the gap */
@@ -233,47 +207,115 @@ img:hover{
     transition: 0.2s ease-in-out;
 }
 
-.loginhtml .login,
-.loginhtml .register,
-.registerhtml .login,
-.registerhtml .register,
-.login-form .group .check{
+.loginConteneur .login,
+.loginConteneur .register,
+.loginform .divloginholder .check{
 	display:none;
 }
 
-.loginhtml .login:checked + .tab,
-.loginhtml .register:checked + .tab,
-.registerhtml .login:checked + .tab,
-.registerhtml .register:checked + .tab{
+.loginConteneur .loginhtml .login:checked + .tab,
+.loginConteneur .loginhtml .register:checked + .tab{
 	color:#fff;
-	border-color:#1161ee;
 }
 
-.loginhtml .sign-in-htm,
-.loginhtml .sign-up-htm{
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	position:absolute;
-	transform:rotateY(180deg);
-	backface-visibility:hidden;
+/* Animation */
+
+.loginConteneur .loginbox,
+.loginConteneur .registerbox{
+	border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+	transform:rotateY(0deg);
+	backface-visibility:visible;
 	transition:all .4s linear;
+} 
+
+.loginform .divloginholder .label,
+.loginform .divloginholder .input,
+.loginform .divloginholder .button{
+	width:100%;
+	color:#fff;
+	display:block;
 }
 
-.loginhtml .hrloginconteneur{
-    margin-top: 10%;
+.loginform .divloginholder .label{
+	color:#aaa;
+	font-size:12px;
+}
+
+.loginform .divloginholder label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+}
+
+.loginform .divloginholder label .icon:before,
+.loginform .divloginholder label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+
+.loginform .divloginholder label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+
+.loginform .divloginholder label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+
+.loginform .divloginholder .check:checked + label{
+	color:#fff;
+}
+.loginform .divloginholder .check:checked + label .icon{
+	background:#1161ee;
+}
+.loginform .divloginholder .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.loginform .divloginholder .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.loginhtml .login:checked + .tab + .sign-up + .tab + .loginform .loginbox{
+	transform:rotate(0);
+}
+.loginhtml .register:checked + .tab + .loginform .registerbox{
+	transform:rotate(0);
+}
+
+.loginform .divloginholder input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+
+.loginbox .hrloginconteneur{
+    margin-top: 5%;
     width: 75%;
 	border-top: 1px solid black;
 }
-.registerhtml .hrregisterconteneur{
+.registerbox .hrregisterconteneur{
     margin-top: 5%;
     width: 75%;
 	border-top: 1px solid black;
 }
 
-.footerbox{
-    margin-top: 10%;
+.footerboxlogin{
+    margin-top: 2%;
+    text-align:center;
+    margin-bottom: 5%;
+}
+
+.footerboxregister{
+    margin-top: 5%;
     text-align:center;
 }
 
@@ -286,7 +328,7 @@ img:hover{
 }
 
 
-.login-wrap{
+/* .loginConteneur{
 	width:100%;
 	margin:auto;
 	max-width:525px;
@@ -294,16 +336,16 @@ img:hover{
 	position:relative;
 	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-}
-.login-html{
+} 
+.loginhtml{
 	width:100%;
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
 	background:rgba(40,57,101,.9);
-}
-.login-html .sign-in-htm,
-.login-html .sign-up-htm{
+} 
+.loginhtml .loginbox,
+.loginhtml .registerbox{
 	top:0;
 	left:0;
 	right:0;
@@ -313,17 +355,17 @@ img:hover{
 	backface-visibility:hidden;
 	transition:all .4s linear;
 }
-.login-html .sign-in,
-.login-html .sign-up,
-.login-form .group .check{
+.loginhtml .login,
+.loginhtml .register,
+.loginform .group .check{
 	display:none;
 }
-.login-html .tab,
-.login-form .group .label,
-.login-form .group .button{
+.loginhtml .tab,
+.loginform .group .label,
+.loginform .group .button{
 	text-transform:uppercase;
 }
-.login-html .tab{
+.loginhtml .tab{
 	font-size:22px;
 	margin-right:15px;
 	padding-bottom:5px;
@@ -331,46 +373,46 @@ img:hover{
 	display:inline-block;
 	border-bottom:2px solid transparent;
 }
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab{
+.loginhtml .login:checked + .tab,
+.loginhtml .register:checked + .tab{
 	color:#fff;
 	border-color:#1161ee;
 }
-.login-form{
+.loginform{
 	min-height:345px;
 	position:relative;
 	perspective:1000px;
 	transform-style:preserve-3d;
 }
-.login-form .group{
+.loginform .group{
 	margin-bottom:15px;
 }
-.login-form .group .label,
-.login-form .group .input,
-.login-form .group .button{
+.loginform .group .label,
+.loginform .group .input,
+.loginform .group .button{
 	width:100%;
 	color:#fff;
 	display:block;
 }
-.login-form .group .input,
-.login-form .group .button{
+.loginform .group .input,
+.loginform .group .button{
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
 }
-.login-form .group input[data-type="password"]{
+.loginform .group input[data-type="password"]{
 	text-security:circle;
 	-webkit-text-security:circle;
 }
-.login-form .group .label{
+.loginform .group .label{
 	color:#aaa;
 	font-size:12px;
 }
-.login-form .group .button{
+.loginform .group .button{
 	background:#1161ee;
 }
-.login-form .group label .icon{
+.loginform .group label .icon{
 	width:15px;
 	height:15px;
 	border-radius:2px;
@@ -378,30 +420,30 @@ img:hover{
 	display:inline-block;
 	background:rgba(255,255,255,.1);
 }
-.login-form .group label .icon:before,
-.login-form .group label .icon:after{
+.loginform .group label .icon:before,
+.loginform .group label .icon:after{
 	content:'';
-	width:10px;
-	height:2px;
+	width:10px;	
+    height:2px;
 	background:#fff;
 	position:absolute;
 	transition:all .2s ease-in-out 0s;
 }
-.login-form .group label .icon:before{
+.loginform .group label .icon:before{
 	left:3px;
 	width:5px;
 	bottom:6px;
 	transform:scale(0) rotate(0);
 }
-.login-form .group label .icon:after{
+.loginform .group label .icon:after{
 	top:6px;
 	right:0;
 	transform:scale(0) rotate(0);
-}
-.login-form .group .check:checked + label{
+} 
+.loginform .group .check:checked + label{
 	color:#fff;
 }
-.login-form .group .check:checked + label .icon{
+.loginform .group .check:checked + label .icon{
 	background:#1161ee;
 }
 .login-form .group .check:checked + label .icon:before{
@@ -424,4 +466,4 @@ img:hover{
 }
 .foot-lnk{
 	text-align:center;
-}
+} */
