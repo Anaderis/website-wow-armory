@@ -27,7 +27,7 @@ body {
 }
 
 
-/* header */
+/* --------------------------- header----------------------------- */
 
 
 form input{
@@ -44,7 +44,7 @@ header {
 }
 
 
-/* menu de navigation */ 
+/* --------------------- menu de navigation ---------------------*/ 
 .logo{
     float: left;
     width: 30%;
@@ -82,7 +82,7 @@ nav{
     height:25%;
     border-radius: 10px; 
     margin:auto;
-    position:fixed;
+    /* position:fixed; */
 
 }
 
@@ -135,98 +135,13 @@ color: rgb(255, 255, 255);
 border-radius: 6px;
 }
 
-/*----------------------------------------Page d'accueil MOUNTS---------------------------------------------------------*/
-
-
-
-/* article */
-
-article {
-    width:60%;
-    margin-left:5%;
-    margin-right: 15px;
-}
-
-article div {
-    background-color: white;
-    margin-bottom:10px;
-    padding:3%;
-}
-
-.invincible {
-    width:40%;
-    margin-left:10px;
-}
-.article1 {
-    display:flex;
-    flex-direction: row;
-}
-.article, img{
-    flex:1;
-    
-}
-
-.articleText {
-    flex:2;
-    display:column;
-    
-}
-
-.articleText p {
-    margin-bottom:5%;
-}
-
-
-
-/* aside */
-.actu{
-    display: flex;
-    flex-direction: row;
-}
-aside {
-    text-align: center;
-    color:white;
-    width:30%;
-    display: flex;
-    flex-direction: column;
-    margin-right: 1%;
-}
-.aside1{
-    padding: 4%;
-    background-color: #164446;
-    margin-bottom: 2%;
-}
-
-.nain {
-    display:flex;
-    width:80%;
-    margin:auto;
-    margin-bottom: 10px;
-    
-
-}
-
-.button-aside {
-    
-    display:block;
-    background-color:white;
-    font-size:medium;
-    color: black;
-    padding: 12px 20px;
-    margin:auto;
-    border: none;
-    border-radius: 4px;
-    cursor:pointer;
-}
-
-
-/*----------------------------------------Page montures---------------------------------------------------------*/
+/*----------------------------------------Menu de filtres---------------------------------------------------------*/
 
 .formMount {
     display:flex;
     flex-direction: row;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     background-image: url(/Assets/header-mounts.jpg);
     background-size:cover;
     height:500px;
@@ -267,14 +182,45 @@ aside {
     font-size:large;
     color: rgb(255, 255, 255);
     border-radius: 6px;
-    margin-top:1%;
+    margin-top:2%;
 }
 
+/* -----------------------------Fiche article monture---------------------------- */
 
+.article {
+    width:100%;
+    margin-left:1;
+    margin-right: 15px;
+}
 
+.article div {
+    background-color: white;
+    margin-bottom:10px;
+    padding:3%;
+}
 
+.photoMount {
+    width:40%;
+    margin-left:10px;
+}
+.articleMount {
+    display:flex;
+    flex-direction: row;
+}
+.articleMount, img{
+    flex:1;
+    
+}
 
+.textMount {
+    flex:2;
+    display:column;
+    
+}
 
+.textMount p {
+    margin-bottom:5%;
+}
 
 
 /* Footer */
@@ -338,4 +284,3 @@ aside {
     color:#aaa;
     margin-bottom:0;
   }
-
