@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="script.js"></script>
     <title>Login</title>
 
@@ -30,35 +30,103 @@
     <main>
         <!-- Login -->
         <div class="loginConteneur">
-            <div class="loginbutton ombre backgroundBlanc">
-                <input type="submit" value="Login">
-            </div>
-            <div class="registerbutton ombre backgroundBlanc">
-                <input type="submit" value="Register">
-            </div>
-            <div class="box ombre backgroundBlanc">
-                <div class="titre-login text-ombre">
-                    <h2>Login</h2>
+            <div class="loginhtml">
+                <div class="loginbutton ombre backgroundBlanc itemcenter">
+                    <input id="tab-signin" type="radio" name="tab" class="login" checked onclick="hide_register()">
+                    <label for="tab-signin" class="tab">Login</label>
                 </div>
-                <div class="loginholder">
-                    <div class="divloginholder">
-                        <h6>UserName</h6> 
-                        <input type="text" placeholder="Enter your UserName">
+                <div class="registerbutton ombre backgroundBlanc itemcenter">
+                    <input id="tab-signup" type="radio" name="tab" class="register" onclick="hide_login()">
+                    <label for="tab-signup" class="tab">Register</label>
+                </div>
+                <div class="loginform " >
+                    <div class="loginbox ombre backgroundBlanc" id="login_vue">
+                        <div class="titre-login text-ombre">
+                            <h2>Login</h2>
+                        </div>
+                        <div class="loginholder">
+                            <div class="divloginholder">
+                                <h6>UserName</h6> 
+                                <input type="text" placeholder="Enter your UserName">
+                            </div>
+                            <div class="divloginholder">
+                                <h6>PassWord</h6>
+                                <input type="password" placeholder="Enter your PassWord">
+                            </div>
+                            <div class="checkin">
+                                <input id="check" type="checkbox" class="check">
+                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                            </div>
+                            <div class="submitbuttonlogin">
+                                <input type="submit" value="Login">
+                            </div>
+                            <div class="hrloginconteneur">
+                                <div class="footerboxlogin">
+                                    <label class="forgotpassword" for="tab-signup">Forgot Password?</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="divloginholder">
-                        <h6>PassWord</h6>
-                        <input type="password" placeholder="Enter your PassWord">
-                    </div>
-                    <input type="submit" value="Login">
-                    <div class="hr">
-                        <div class="footerbox">
-                            <a href="#forgot">Forgot Password?</a>
+                    <div class="registerbox ombre backgroundBlanc" id="register_vue">
+                            <div class="titre-login text-ombre">
+                                <h2>Register</h2>
+                            </div>
+                        <div class="loginholder">
+                            <div class="divloginholder">
+                                <h6>UserName</h6> 
+                                <input type="text" placeholder="Enter your UserName">
+                            </div>
+                            <div class="divloginholder">
+                                <h6>PassWord</h6>
+                                <input type="password" placeholder="Enter your PassWord">
+                            </div>
+                            <div class="divloginholder">
+                                <h6>Repeat PassWord</h6> 
+                                <input type="password" placeholder="Enter your PassWord">
+                            </div>
+                            <div class="divloginholder">
+                                <h6>Email Adress</h6>
+                                <input type="email" placeholder="Enter your Email">
+                            </div>
+                            <div class="submitbuttonregister">
+                                <input type="submit" value="Register">
+                            </div>
+                            <div class="hrregisterconteneur">
+                                <div class="footerboxregister">
+                                    <label class="alreadymember" for="tab-signin">Already Member?</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+        <script>
+            //Func hide_register()
+                //Récupération element avec ID = login_vue
+                //element.attribute.set(hide = false)
+                //Récupération element avec ID = register_vue
+                //element.attribute.set(hide = true)
+            //Func hide_login()
+                //Récupération element avec ID = login_vue
+                //element.attribute.set(hide = true)
+                //Récupération element avec ID = register_vue
+                //element.attribute.set(hide = false)
+            function hide_register() {
+                document.getElementById("register_vue").style.display = "none";
+                document.getElementById("login_vue").style.display = "block";
+            }
+        
+            function hide_login() {
+                document.getElementById("login_vue").style.display = "none";
+                document.getElementById("register_vue").style.display = "block";
+            }
+        </script>
+        <style>
+            #register_vue {
+                display: none;
+            }
+        </style>
 
 
     <div class="footer-basic">

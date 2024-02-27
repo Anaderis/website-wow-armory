@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(../Assets/fond-login.jpg);
+    background-size: cover;
+    height:auto;
+    width:auto;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 8%;
+    align-items: center;
+    margin: auto; 
+    margin-top: 1%;
+    margin-bottom: 3%; 
+}
+
+main{
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* img-Logo */
+img{
+    border-radius: 100px;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    box-shadow: 8px 10px 2px 1px rgba(58, 58, 58, 0.2);
+    transition: 0.5s ease-in-out;
+}
+
+img:hover{    
+    opacity: 0.9;
+    filter: grayscale(0%);
+    transition: 0.3s ease-in-out;
+}
+
+/* Class */
+
+
+/* BoxLogin */
+.loginConteneur{
+    margin-top: 3%;
+    margin-bottom: 15%;
+    opacity: 0.8;  
+}
+
+.loginhtml{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+    grid-template-rows: 35px 450px;
+    gap: 6px;
+}
+
+.loginform{
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.backgroundBlanc{
+    background-color: white;
+}
+
+.loginbutton{
+    border-top-left-radius: 12px;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbutton:hover{
+    --s: 100%;   /* the size of the image */
+    --b: 2px;     /* the border thickness*/
+    --g: 4px;    /* the gap */
+    --c: #000000; /* the color */
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+    transition: 0.2s ease-in-out;
+}
+
+.registerbutton{
+    border-top-right-radius: 12px;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerbutton:hover{
+    --s: 100%;   /* the size of the image */
+    --b: 2px;     /* the border thickness*/
+    --g: 4px;    /* the gap */
+    --c: #000000; /* the color */
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+    transition: 0.2s ease-in-out;
+}
+
+.titre-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+}
+
+label .tab,
+input .register{
+    cursor: pointer;
+}
+
+/* loginholder */
+
+.loginholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.divloginholder{
+    margin-top:3%;
+}
+
+.loginholder input[type="text"],
+.loginholder input[type="password"],
+.loginholder input[type="email"]{
+    opacity: 1;
+    display: block;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 0.8em;
+    border-radius: 10px;
+    background: #3c3c3c;
+    color: #fff;
+}
+
+.submitbuttonlogin input[type=submit],
+.submitbuttonregister input[type=submit]{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 13px 18px;
+    margin: 20% 0 0 0;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.submitbuttonlogin input[type=submit]:hover,
+.submitbuttonregister input[type=submit]:hover{
+    --s: 100%;   /* the size of the image */
+    --b: 2px;     /* the border thickness*/
+    --g: 4px;    /* the gap */
+    --c: #000000; /* the color */
+    cursor: pointer;
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+    transition: 0.2s ease-in-out;
+}
+
+.loginConteneur .login,
+.loginConteneur .register,
+.loginform .divloginholder .check .footerboxlogin{
+	display:none;
+}
+
+.checkin{
+    margin-top: 2%;
+}
+
+.loginConteneur .loginbox,
+.loginConteneur .registerbox{
+	border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+} 
+
+.loginbox .hrloginconteneur{
+    margin-top: 5%;
+    width: 75%;
+	border-top: 1px solid black;
+}
+.registerbox .hrregisterconteneur{
+    margin-top: 5%;
+    width: 75%;
+	border-top: 1px solid black;
+}
+
+.footerboxlogin{
+    margin-top: 3%;
+    text-align:center;
+    margin-bottom: 3%;
+}
+
+.alreadymember,
+.forgotpassword{
+    cursor: pointer;
+}
+
+.footerboxregister{
+    margin-top: 3%;
+    text-align:center;
+    margin-bottom: 3%;
+}
+
+/* Ombre */
+.ombre{
+    box-shadow: 8px 10px 2px 1px rgba(58, 58, 58, 0.2);
+}
+.text-ombre{
+    text-shadow: 2px 2px 2px rgb(160, 160, 160);
+}
+
+
+/* Footer */
+.footer-basic {
+    padding:40px 0;
+    background-color:#ffffff;
+    color:#4b4c4d;
+    border-radius: 8px;
+    margin: 1% 1% 1% 1%;
+    opacity:0.9;
+}
+
+.footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+
+.footer-basic li {
+    padding:0 10px;
+}
+
+.footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity:1;
+}
+
+.footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+    
+}
+
+.footer-basic .social > a:hover {
+    opacity:0.9;
+}
+
+.footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
