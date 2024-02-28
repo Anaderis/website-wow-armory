@@ -42,6 +42,10 @@ img:hover{
     transition: 0.3s ease-in-out;
 }
 
+.tab{
+    margin-bottom: 0;
+}
+
 /* Class */
 
 
