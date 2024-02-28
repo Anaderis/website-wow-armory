@@ -20,7 +20,7 @@ body {
 }
 
 .imgHeader {
-    background-image: url(Assets/background.avif);
+    background-image: url(../Assets/background.avif);
     background-size: cover;
     height:600px;
     width:100%;
