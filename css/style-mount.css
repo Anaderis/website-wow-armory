@@ -137,14 +137,17 @@ border-radius: 6px;
 
 /*----------------------------------------Menu de filtres---------------------------------------------------------*/
 
+.headerMount {
+    
+    height:600px;
+    width:100%;
+}
 .formMount {
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-image: url(/Assets/header-mounts.jpg);
-    background-size:cover;
-    height:500px;
+
 
 }
 
@@ -172,7 +175,7 @@ border-radius: 6px;
 }
 
 .filter button {
-    width: 80px;
+    width: 20%;
     height: 50px;
     cursor: pointer;
     background:black;
