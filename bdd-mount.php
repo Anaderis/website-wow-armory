@@ -9,22 +9,19 @@
 
     <link rel="stylesheet" href="./css/style-mount.css" />
 
-    <!-- Footer -->
+    <!-- Footer
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
 
-    <!-- Police -->
+    //Police
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" /> -->
 </head>
 
 <body>
 
-    <!-- <div>
-        <img src="./Assets/header-mounts.jpg" class="headerMount">
-    </div> -->
 
     <header>
 
@@ -48,8 +45,8 @@
                     <a href="./login.html"><button class="login" type="button">Login</button></a>
                 </li>
             </ul>
-        </nav>
 
+        </nav>
 
 
 
@@ -59,6 +56,18 @@
             <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
 
             <!-- Difficulté -->
+
+            <div class="filter">
+                <label for="type">Type : </label>
+                <select name="type">
+                    <option value="">Type</option>
+                    <option value="Aquatique">Aquatique</option>
+                    <option value="Volante">Volante</option>
+                    <option value="Terrestre">Terrestre</option>
+                </select>
+            </div>
+
+
             <div class="filter">
                 <label for="difficulty">Difficulty : </label>
                 <select name="difficulty">
@@ -135,8 +144,8 @@
 
         </form>
 
-    </header>
 
+    </header>
 
 
     <!-- /*----------------------------Connexion BDD------------------------*/ -->
@@ -148,11 +157,6 @@
     $servername = 'localhost';
     $username = 'root';
     $password = '';
-
-    $difficulty = $_POST["difficulty"];
-    $source = $_POST["source"];
-    $extension = $_POST["extension"];
-    $faction = $_POST["faction"];
 
 
 
@@ -167,14 +171,49 @@
 
         //On récupère les infos de la table 
     
+
+
+
+
         if (isset($_POST["submit"])) {
-            $sqlQuery = 'SELECT * FROM t_monture LEFT JOIN tj_m_appartient_fa_mafa on tj_m_appartient_fa_mafa.M_Id=t_monture.M_Id 
-                                                     LEFT JOIN t_m_faction_mfa on t_m_faction_mfa.MFA_Id=tj_m_appartient_fa_mafa.MFA_Id 
-                                                     LEFT JOIN t_m_difficulte_mdi on t_m_difficulte_mdi.MDI_Id=t_monture.MDI_Id 
-                                                     LEFT JOIN t_moyen_obtention_mo on t_moyen_obtention_mo.MO_Id=t_monture.MO_Id 
-                                                     LEFT JOIN t_m_extensions_me on t_m_extensions_me.ME_Id=t_monture.ME_Id 
-                                                     WHERE MFA_Nom = :faction
-                                                     OR ME_Nom = :extension OR MO_Nom = :source OR MDI_Nom = :difficulty';
+
+            $difficulty = $_POST["difficulty"];
+            $source = $_POST["source"];
+            $extension = $_POST["extension"];
+            $faction = $_POST["faction"];
+            // $type = $_POST["type"];
+    
+            if (!empty($_POST['difficulty'])) // si une region à été choisie
+            {
+                $where[] = ' MFA_Id = ' . $_POST["faction"];
+            }
+            if (!empty($_POST['source'])) // si une region à été choisie
+            {
+                $where[] = ' MO_Id = ' . $_POST["source"];
+            }
+            if (!empty($_POST['extension'])) // si une region à été choisie
+            {
+                $where[] = ' ME_Id = ' . $_POST["extension"];
+            }
+            if (!empty($_POST['faction'])) // si une region à été choisie
+            {
+                $where[] = ' MFA_Id = ' . $_POST["faction"];
+            }
+
+
+
+
+            $sqlQuery = 'SELECT * FROM t_monture INNER JOIN tj_m_appartient_fa_mafa on tj_m_appartient_fa_mafa.M_Id=t_monture.M_Id 
+                                                     INNER JOIN t_m_faction_mfa on t_m_faction_mfa.MFA_Id=tj_m_appartient_fa_mafa.MFA_Id 
+                                                     INNER JOIN t_m_difficulte_mdi on t_m_difficulte_mdi.MDI_Id=t_monture.MDI_Id 
+                                                     INNER JOIN t_moyen_obtention_mo on t_moyen_obtention_mo.MO_Id=t_monture.MO_Id 
+                                                     INNER JOIN t_m_extensions_me on t_m_extensions_me.ME_Id=t_monture.ME_Id';
+
+            if (isset($where)) {
+                $sqlQuery .= " WHERE " . implode(' AND ', $where);
+            }
+
+
             $sth = $dbco->prepare($sqlQuery);
             $sth->bindParam(':faction', $faction, PDO::PARAM_STR);
             $sth->bindParam(':extension', $extension, PDO::PARAM_STR);
