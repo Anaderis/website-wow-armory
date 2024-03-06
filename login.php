@@ -133,11 +133,15 @@
             function hide_login() {
                 document.getElementById("login_vue").style.display = "none";
                 document.getElementById("register_vue").style.display = "block";
+                
             }
         </script>
         <style>
             #register_vue {
                 display: none;
+            }
+            .registerbox{
+                margin-bottom: 10%; 
             }
         </style>
     </main> 
