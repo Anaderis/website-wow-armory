@@ -12,6 +12,8 @@
 
 if(isset($_POST["submit"])){
 
+    // require_once("adduser.php");
+
     $Userlogin = $_POST["User"];
     $passwordlogin = $_POST["password"];
 
@@ -59,7 +61,7 @@ if(isset($_POST["submit"])){
                 $_SESSION['User'] = $row['J_User'];
                 $_SESSION['J_Id'] = $row['J_Id'];
 
-                header("Location: ./bdd-mount.php");
+                header("Location: ./wow-armory.php");
 
                 exit();
             } 

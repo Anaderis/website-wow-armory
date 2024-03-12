@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(../Assets/fond-login.jpg);
+    background-image: url('https://img.freepik.com/photos-gratuite/challenger-se-tient-devant-illustration-effrayante-du-chateau_456031-14.jpg?t=st=1710252365~exp=1710255965~hmac=7da5fa59049c9abd76585c54c7a9f3564780a06bb9a45f9bbfaf999f68169647&w=1800');
     background-size: cover;
     height:auto;
     width:auto;
@@ -58,7 +58,7 @@ img:hover{
 
 .loginhtml{
     display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr 1fr 1fr 0.5fr 0.5fr 1fr;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.75fr 0.75fr 0.5fr 0.5fr 1fr;
     grid-template-rows: 35px 450px;
     gap: 6px;
 }

@@ -49,6 +49,9 @@
               placeholder="Recherche"
             />
           </li>
+          <?php
+            if()
+          ?>
           <li>
             <input type="submit" name="submit" class="submit" value="Search" />
           </li>
