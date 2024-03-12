@@ -35,7 +35,7 @@ if(isset($_POST["submit-register"])){
         }
     }else{
         require_once "DB_Conn.php";
-        $passwordHash = md5($passwordregister);
+        $passwordHash = password_hash($passwordregister, PASSWORD_DEFAULT);
         // Fonction pour génèrer un random ID 
         function generateRandomId() {
             return rand(1, 999999);
@@ -57,7 +57,7 @@ if(isset($_POST["submit-register"])){
         function sanitizeEmail($emailregister) {
             return filter_var($emailregister, FILTER_SANITIZE_EMAIL);
         }
-        // Filtre and valide l'email
+        // Filtre et valide l'email
         $sanitizedEmail = sanitizeEmail($emailregister);
         
         // Check si l'email existe déjà dans la base de données
@@ -81,5 +81,4 @@ if(isset($_POST["submit-register"])){
         $conn->close();
     }
 }
-?>
     

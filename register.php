@@ -60,7 +60,6 @@
                                     <input id="check" type="checkbox" class="check">
                                     <label for="check"><span class="icon"></span> Keep me Signed in</label>
                                 </div>
-                                <?php include "./PHP/Login/auth.php"?>
                                 <div class="submitbuttonlogin">
                                     <input type="submit" name="submit"  value="Login">
                                 </div>
@@ -151,7 +150,7 @@
                 display: none;
             }
             .registerbox{
-                margin-bottom: 10%; 
+                margin-bottom: 5%; 
             }
         </style>
     </main> 

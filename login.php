@@ -103,7 +103,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php include "./PHP/Login/adduser.php"?>
                                 <div class="submitbuttonregister">
                                     <input type="submit" name="submit-register" value="Register">
                                 </div>
@@ -147,7 +146,7 @@
                 display: none;
             }
             .registerbox{
-                margin-bottom: 10%; 
+                margin-bottom: 5%; 
             }
         </style>
     </main> 
