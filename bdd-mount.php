@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="./css/style-equipment.css" />
 
     <!-- Footer -->
-    <!-- <link rel="stylesheet"
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -76,10 +76,8 @@
                     <option value="Volante">Volante</option>
                     <option value="Terrestre">Terrestre</option>
                 </select>
-            </div>
 
 
-            <div class="filter">
                 <label for="difficulty">Difficulty</label>
                 <select name="difficulty">
                     <option value="">Difficulty</option>
@@ -87,9 +85,7 @@
                     <option value="Moyen">Medium</option>
                     <option value="Difficile">Difficult</option>
                 </select>
-            </div>
 
-            <div class="filter">
                 <label for="source">Source</label>
                 <select name="source">
                     <option value="">Source</option>
@@ -114,7 +110,8 @@
                 </select>
             </div>
 
-            <div class="filter">
+            <div class="filter2">
+
                 <label for="extension">Extensions</label>
                 <select name="extension">
                     <option value="">Extensions</option>
@@ -129,9 +126,7 @@
                     <option value="WoW Vanilla">WoW Vanilla</option>
                     <option value="Wrath of the Lich King">Wrath of the Lich King</option>
                 </select>
-            </div>
 
-            <div class="filter">
                 <label for="faction">Faction</label>
                 <select name="faction">
                     <option value="">Faction</option>
@@ -139,11 +134,13 @@
                     <option value="Horde">Horde</option>
                     <option value="Neutre">Neutre</option>
                 </select>
+
+                <div>
+                    <input type="submit" value="Search" name="submit">
+                </div>
             </div>
 
-            <div>
-                <input type="submit" value="Search" name="submit">
-            </div>
+
 
 
 
