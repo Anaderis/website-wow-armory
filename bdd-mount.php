@@ -201,6 +201,7 @@
             $haveFaction = false;
             $type = $_POST["type"];
             $haveType = false;
+            $i = 0;
 
 
             $sqlQuery = 'SELECT * FROM t_monture 
@@ -279,8 +280,12 @@
             // for ($i = 0; $i < count($resultat); $i++) {
     
 
+
             foreach ($resultat as $resultats) {
+                $i++;
+
                 ?>
+
                 <section>
                     <div class="actu">
                         <article class="article">
@@ -289,15 +294,50 @@
                                     <h3>
                                         <?php echo $resultats['M_Nom'] ?>
                                     </h3>
-                                    <p>
-                                        <?php echo $resultats['MO_Nom'] ?>
-                                        <?php echo $resultats['MDI_Nom'] ?>
-                                        <?php echo $resultats['ME_Nom'] ?>
-                                        <?php echo $resultats['MFA_Nom'] ?>
-                                        <?php echo $resultats['MTY_Nom'] ?>
 
-                                    </p>
-                                    <button class="read" type="button">Lire la suite</button>
+                                    <div class="criteriaMount">
+
+                                        <div class="difficulty">
+
+                                            <img src="./Assets/mounts/picto/star.png" class="picto">
+
+                                            <?php if (!empty($_POST['difficulty'])) {
+                                                if ($difficulty === "Facile") {
+                                                    echo '<style> .difficulty {color:green;} </style>';
+                                                    echo $resultats['MDI_Nom'];
+                                                } ?>
+
+                                                <?php if ($difficulty === "Moyen") {
+                                                    echo '<style> .difficulty {color:brown;} </style>';
+                                                    echo $resultats['MDI_Nom'];
+                                                } ?>
+
+                                                <?php if ($difficulty === "Difficile") {
+                                                    echo '<style> .difficulty {color:brown;} </style>';
+                                                    echo $resultats['MDI_Nom'];
+                                                }
+                                            } else {
+                                                echo $resultats['MDI_Nom'];
+                                            } ?>
+
+
+                                        </div>
+
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MO_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['ME_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MFA_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MTY_Nom'] ?>
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
                                 <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
@@ -309,6 +349,9 @@
 
                 <?php
             }
+
+            echo "<p class=count> total results : $i</p>";
+
         }
     }
 
