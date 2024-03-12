@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="./css/style-mount.css" />
 
     <!-- Footer -->
-    <!-- <link rel="stylesheet"
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
 
-  
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -55,9 +55,9 @@
 
             <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
 
-            <!-- Difficulté -->
+            <!-- Type -->
 
-            <!-- <div class="filter">
+            <div class="filter">
                 <label for="type">Type : </label>
                 <select name="type">
                     <option value="">Type</option>
@@ -65,7 +65,7 @@
                     <option value="Volante">Volante</option>
                     <option value="Terrestre">Terrestre</option>
                 </select>
-            </div> -->
+            </div>
 
 
             <div class="filter">
@@ -191,15 +191,17 @@
             $haveExtension = false;
             $faction = $_POST["faction"];
             $haveFaction = false;
-            // $type = $_POST["type"];
-    
+            $type = $_POST["type"];
+            $haveType = false;
+
 
             $sqlQuery = 'SELECT * FROM t_monture 
             INNER JOIN tj_m_appartient_fa_mafa on tj_m_appartient_fa_mafa.M_Id=t_monture.M_Id 
             INNER JOIN t_m_faction_mfa on t_m_faction_mfa.MFA_Id=tj_m_appartient_fa_mafa.MFA_Id 
             INNER JOIN t_m_difficulte_mdi on t_m_difficulte_mdi.MDI_Id=t_monture.MDI_Id 
             INNER JOIN t_moyen_obtention_mo on t_moyen_obtention_mo.MO_Id=t_monture.MO_Id 
-            INNER JOIN t_m_extensions_me on t_m_extensions_me.ME_Id=t_monture.ME_Id';
+            INNER JOIN t_m_extensions_me on t_m_extensions_me.ME_Id=t_monture.ME_Id
+            INNER JOIN t_m_type_mty on t_m_type_mty.MTY_Id=t_monture.MTY_Id';
 
 
             // Godefroy
@@ -224,6 +226,11 @@
             {
                 $where[] = ' MFA_Nom = ' . ':faction';
                 $haveFaction = true;
+            }
+            if (!empty($_POST['type'])) // si une region à été choisie
+            {
+                $where[] = ' MTY_Nom = ' . ':type';
+                $haveType = true;
             }
 
 
@@ -252,6 +259,9 @@
             if ($haveDifficulty) {
                 $sth->bindParam(':difficulty', $difficulty, PDO::PARAM_STR);
             }
+            if ($haveType) {
+                $sth->bindParam(':type', $type, PDO::PARAM_STR);
+            }
 
             $sth->execute();
 
@@ -276,6 +286,7 @@
                                         <?php echo $resultats['MDI_Nom'] ?>
                                         <?php echo $resultats['ME_Nom'] ?>
                                         <?php echo $resultats['MFA_Nom'] ?>
+                                        <?php echo $resultats['MTY_Nom'] ?>
 
                                     </p>
                                     <button class="read" type="button">Lire la suite</button>
