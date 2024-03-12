@@ -45,7 +45,7 @@
                     <input type="submit" name="submit" class="submit" value="Search" />
                 </li>
                 <li>
-                    <a href="./login.html"><button class="login" type="button">Login</button></a>
+                    <a href="./login.php"><button class="login" type="button">Login</button></a>
                 </li>
             </ul>
         </nav>

@@ -11,17 +11,14 @@
                         
 if(isset($_POST["submit-register"])){
     $emailregister = $_POST["email-register"];
-    $prenomregister = $_POST["prenom-register"];
-    $nomregister = $_POST["nom-register"];
+    $Userregister = $_POST["User-register"];
     $passwordregister = $_POST["password-register"];
     $passwordrepeatregister = $_POST["password-check-register"];
 
-    $passwordHash = password_hash($passwordregister, PASSWORD_DEFAULT);
-
     $errors = array();
 
-    if(empty($emailregister) OR empty($prenomregister) OR empty($nomregister) OR empty($passwordregister) OR empty($passwordrepeatregister)){
-        array_push($errors, "All fields are required");
+    if(empty($emailregister) OR empty($Userregister) OR empty($passwordregister) OR empty($passwordrepeatregister)){
+        array_push($errors, "All fields are required" );
     }
     if(!filter_var($emailregister, FILTER_VALIDATE_EMAIL)){
         array_push($errors, "Email is not valid");
@@ -38,7 +35,7 @@ if(isset($_POST["submit-register"])){
         }
     }else{
         require_once "DB_Conn.php";
-        
+        $passwordHash = md5($passwordregister);
         // Fonction pour génèrer un random ID 
         function generateRandomId() {
             return rand(1, 999999);
@@ -68,13 +65,13 @@ if(isset($_POST["submit-register"])){
         $result = $conn->query($sqlCheck);
         
         if ($result->num_rows > 0) {
-            echo "Email '$sanitizedEmail' already exists.";
+            array_push($errors, "Email already exist." );
         } else {
-            $sql = "INSERT INTO t_joueur (J_Id, J_ADR, J_MDP, J_Nom, J_PRE) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO t_joueur (J_Id, J_ADR, J_MDP, J_User) VALUES (?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             $preparestmt = mysqli_stmt_prepare($stmt, $sql);
             if($preparestmt){
-                mysqli_stmt_bind_param($stmt, "sssss", $randomId, $emailregister, $passwordregister ,$nomregister , $prenomregister);
+                mysqli_stmt_bind_param($stmt, "ssss", $randomId, $emailregister, $passwordregister, $Userregister);
                 mysqli_stmt_execute($stmt);
             }else{
                 array_push($errors, "Something went wrong"); 
