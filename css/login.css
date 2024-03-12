@@ -58,7 +58,7 @@ img:hover{
 
 .loginhtml{
     display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr 1fr 0.5fr 0.5fr 1fr;
     grid-template-rows: 35px 450px;
     gap: 6px;
 }
@@ -137,14 +137,41 @@ input .register{
     justify-content: center;
     align-items: center;
 }
-
-.divloginholder{
-    margin-top:3%;
+.registerholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.textregisterholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pwdregisterholder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textholder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+    margin-bottom: 2%;
 }
 
-.loginholder input[type="text"],
-.loginholder input[type="password"],
-.loginholder input[type="email"]{
+.divloginholder{
+    margin-top:5%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
     opacity: 1;
     display: block;
     border: none;
@@ -165,7 +192,7 @@ input .register{
     background-color: #000000;
     color: white;
     padding: 13px 18px;
-    margin: 20% 0 0 0;
+    margin: 35% 0 0% 0;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 600;
@@ -191,6 +218,7 @@ input .register{
 
 .checkin{
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .loginConteneur .loginbox,
