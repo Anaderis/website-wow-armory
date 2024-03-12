@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <title>WoW Collection</title>
 
-    <link rel="stylesheet" href="./css/style-mount.css" />
+    <link rel="stylesheet" href="./css/style-equipment.css" />
 
     <!-- Footer -->
     <link rel="stylesheet"
@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
 
 
     <header>
@@ -53,33 +54,39 @@
 
         <form action="bdd-mount.php" method="post" class="formMount">
 
+            <style>
+                form {
+                    background-image: url('Assets/header-mounts.jpg');
+                    background-size: cover;
+                    height: 600px;
+                    width: 100%;
+                }
+            </style>
+
             <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
 
             <!-- Type -->
 
             <div class="filter">
-                <label for="type">Type : </label>
+
+                <label for="type">Type</label>
                 <select name="type">
                     <option value="">Type</option>
                     <option value="Aquatique">Aquatique</option>
                     <option value="Volante">Volante</option>
                     <option value="Terrestre">Terrestre</option>
                 </select>
-            </div>
 
 
-            <div class="filter">
-                <label for="difficulty">Difficulty : </label>
+                <label for="difficulty">Difficulty</label>
                 <select name="difficulty">
                     <option value="">Difficulty</option>
                     <option value="Facile">Easy</option>
                     <option value="Moyen">Medium</option>
                     <option value="Difficile">Difficult</option>
                 </select>
-            </div>
 
-            <div class="filter">
-                <label for="source">Source : </label>
+                <label for="source">Source</label>
                 <select name="source">
                     <option value="">Source</option>
                     <option value="Anniversaire de WoW">WoW Anniversary</option>
@@ -103,8 +110,9 @@
                 </select>
             </div>
 
-            <div class="filter">
-                <label for="extension">Extensions : </label>
+            <div class="filter2">
+
+                <label for="extension">Extensions</label>
                 <select name="extension">
                     <option value="">Extensions</option>
                     <option value="Battle for Azeroth">Battle for Azeroth</option>
@@ -118,21 +126,21 @@
                     <option value="WoW Vanilla">WoW Vanilla</option>
                     <option value="Wrath of the Lich King">Wrath of the Lich King</option>
                 </select>
-            </div>
 
-            <div class="filter">
-                <label for="faction">Faction : </label>
+                <label for="faction">Faction</label>
                 <select name="faction">
                     <option value="">Faction</option>
                     <option value="Alliance">Alliance</option>
                     <option value="Horde">Horde</option>
                     <option value="Neutre">Neutre</option>
                 </select>
+
+                <div>
+                    <input type="submit" value="Search" name="submit">
+                </div>
             </div>
 
-            <div>
-                <input type="submit" value="Search" name="submit">
-            </div>
+
 
 
 
@@ -193,6 +201,7 @@
             $haveFaction = false;
             $type = $_POST["type"];
             $haveType = false;
+            $i = 0;
 
 
             $sqlQuery = 'SELECT * FROM t_monture 
@@ -271,8 +280,12 @@
             // for ($i = 0; $i < count($resultat); $i++) {
     
 
+
             foreach ($resultat as $resultats) {
+                $i++;
+
                 ?>
+
                 <section>
                     <div class="actu">
                         <article class="article">
@@ -281,15 +294,50 @@
                                     <h3>
                                         <?php echo $resultats['M_Nom'] ?>
                                     </h3>
-                                    <p>
-                                        <?php echo $resultats['MO_Nom'] ?>
-                                        <?php echo $resultats['MDI_Nom'] ?>
-                                        <?php echo $resultats['ME_Nom'] ?>
-                                        <?php echo $resultats['MFA_Nom'] ?>
-                                        <?php echo $resultats['MTY_Nom'] ?>
 
-                                    </p>
-                                    <button class="read" type="button">Lire la suite</button>
+                                    <div class="criteriaMount">
+
+                                        <div class="difficulty">
+
+                                            <img src="./Assets/mounts/picto/star.png" class="picto">
+
+                                            <?php if (!empty($_POST['difficulty'])) {
+                                                if ($difficulty === "Facile") {
+                                                    echo '<style> .difficulty {color:green;} </style>';
+                                                    echo $resultats['MDI_Nom'];
+                                                } ?>
+
+                                                <?php if ($difficulty === "Moyen") {
+                                                    echo '<style> .difficulty {color:brown;} </style>';
+                                                    echo $resultats['MDI_Nom'];
+                                                } ?>
+
+                                                <?php if ($difficulty === "Difficile") {
+                                                    echo '<style> .difficulty {color:brown;} </style>';
+                                                    echo $resultats['MDI_Nom'];
+                                                }
+                                            } else {
+                                                echo $resultats['MDI_Nom'];
+                                            } ?>
+
+
+                                        </div>
+
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MO_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['ME_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MFA_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MTY_Nom'] ?>
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
                                 <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
@@ -301,6 +349,9 @@
 
                 <?php
             }
+
+            echo "<p class=count> total results : $i</p>";
+
         }
     }
 
