@@ -24,7 +24,7 @@
 <body>
     <header>
         <nav>
-            <a href="./bdd-mount.php">
+            <a href="./wow-armory.php">
                 <img class="logoWOW" src="./Assets/logo.png" alt="logoWOW">
             </a>
         </nav>
