@@ -19,12 +19,7 @@ body {
     font-family: 'acherus_grotesque_regularRg','calibri','serif';
 }
 
-.imgHeader {
-    background-image: url(Assets/background.avif);
-    background-size: cover;
-    height:600px;
-    width:100%;
-}
+
 
 
 /* --------------------------- header----------------------------- */
@@ -38,9 +33,7 @@ form input{
 
 header {
     
-
     width: 100%;
-    margin-bottom:10px;
 }
 
 
@@ -66,6 +59,8 @@ header {
     align-items:center;
     list-style:none;
     color:black;
+    flex-wrap:wrap;
+    padding:1%;
     
 
 }
@@ -142,84 +137,136 @@ border-radius: 6px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-image: url(/Assets/header-mounts.jpg);
-    background-size:cover;
-    height:500px;
+    padding-bottom: 3%;
+    flex-wrap:wrap;
 
 }
 
 .filter {
     display:flex;
-    flex:1;
     flex-direction: column;
     align-items:center;
-    padding-bottom: 4%;
+    padding: 2%;
+    flex-wrap:wrap;
+
     
 }
 
-.filter input {
-    min-width: 400px;
-    padding-left:1%;
+.filter2 {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 2%;
+}
+
+ select {
+    min-width: 300px;
+    padding-left:20%;
     padding:1%;
     opacity: 0.8;
+    margin:5%;
+    padding:5%;
     /* color:white; */
 }
 
-.filter label {
+label {
     color:white;
-    font-size: 1em;
+    font-size: 1.5em;
     padding-top:1%;
 }
 
-.filter button {
-    width: 80px;
+input[type=submit] {
+    min-width: 10em;
     height: 50px;
     cursor: pointer;
     background:black;
     border: 1px solid #000000;
     transition: 0.5s ease-in-out;
-    float: right;
     font-size:large;
     color: rgb(255, 255, 255);
     border-radius: 6px;
-    margin-top:2%;
+    margin-top:20%;
 }
 
 /* -----------------------------Fiche article monture---------------------------- */
 
-.article {
-    width:100%;
-    margin-left:1;
-    margin-right: 15px;
+/* Compteur de résultat */
+.count {
+  font-size: 2em;
+  float:left;
 }
+
+
+
+
+/* bloc de résultat de la monture */
+.article {
+    width:80%;
+    margin:auto;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* padding et margin autour du bloc */
 
 .article div {
-    background-color: white;
+    
     margin-bottom:10px;
-    padding:3%;
+    padding:1%;
+
+    
 }
 
+/* format de l'image */
+
 .photoMount {
-    width:40%;
+    width: 20%;
+    height : 50%;
     margin-left:10px;
 }
+
+
 .articleMount {
     display:flex;
     flex-direction: row;
+    background-color: rgba(201, 190, 195, 0.18);
+    margin-top:1%;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    
 }
 .articleMount, img{
     flex:1;
     
-}
-
-.textMount {
-    flex:2;
-    display:column;
     
 }
+.difficulty {
+  display:flex;
+  align-items: center;
+}
+.picto {
+  width:30px;
+  padding-right: 10px;
+} 
 
-.textMount p {
-    margin-bottom:5%;
+/* proportion du texte dans la div */
+
+.textMount {
+    flex:2;  
+}
+
+.textMount h3 {
+  padding-bottom:5%;
+}
+
+.criteriaMount {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  
 }
 
 
