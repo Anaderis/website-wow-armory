@@ -54,12 +54,12 @@
         <form action="equipements.php" method="post" class="formMount">
 
             <style>
-                form {
-                    background-image: url('./Assets/header-equipement.jpg');
-                    background-size: cover;
-                    height: 600px;
-                    width: 100%;
-                }
+            form {
+                background-image: url('./Assets/header-equipement.jpg');
+                background-size: cover;
+                height: 600px;
+                width: 100%;
+            }
             </style>
             <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
 
@@ -284,32 +284,32 @@
 
             foreach ($resultat as $resultats) {
                 ?>
-                <section>
-                    <div class="actu">
-                        <article class="article">
-                            <div class="articleMount">
-                                <div class="textMount">
-                                    <h3>
-                                        <?php echo $resultats['E_Nom'] ?>
-                                    </h3>
-                                    <p>
-                                        <?php echo $resultats['ETY_Nom'] ?>
-                                        <?php echo $resultats['EE_Nom'] ?>
-                                        <?php echo $resultats['ER_Nom'] ?>
-                                        <?php echo $resultats['MO_Nom'] ?>
+    <section>
+        <div class="actu">
+            <article class="article">
+                <div class="articleMount">
+                    <div class="textMount">
+                        <h3>
+                            <?php echo $resultats['E_Nom'] ?>
+                        </h3>
+                        <p>
+                            <?php echo $resultats['ETY_Nom'] ?>
+                            <?php echo $resultats['EE_Nom'] ?>
+                            <?php echo $resultats['ER_Nom'] ?>
+                            <?php echo $resultats['MO_Nom'] ?>
 
-                                    </p>
-                                    <button class="read" type="button">Lire la suite</button>
-                                </div>
-
-                                <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
-                            </div>
+                        </p>
+                        <button class="read" type="button">Lire la suite</button>
                     </div>
-                    </article>
-                    </div>
-                </section>
 
-                <?php
+                    <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount" />
+                </div>
+        </div>
+        </article>
+        </div>
+    </section>
+
+    <?php
             }
         }
     }
