@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <title>WoW Collection</title>
 
-    <link rel="stylesheet" href="./css/style-mount.css" />
+    <link rel="stylesheet" href="./css/style-equipment.css" />
 
     <!-- Footer -->
     <link rel="stylesheet"
@@ -28,11 +28,11 @@
         <nav id="menus">
             <ul>
                 <li>
-                    <a href="./wow-armory.html">
+                    <a href="./wow-armory.php">
                         <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
                 </li>
-                <li><a href="./montures.html">Mounts </a></li>
-                <li><a href="./equipements.html">Equipments</a></li>
+                <li><a href="./bdd-mount.php">Mounts </a></li>
+                <li><a href="./equipements.php">Equipments</a></li>
                 <li><a href="./map.html">Map</a></li>
                 <li><a href="./MonCompte.html">My account</a></li>
                 <li>
@@ -51,8 +51,16 @@
 
 
 
-        <form action="bdd-mount.php" method="post" class="formMount">
+        <form action="equipements.php" method="post" class="formMount">
 
+            <style>
+                form {
+                    background-image: url('./Assets/header-equipement.jpg');
+                    background-size: cover;
+                    height: 600px;
+                    width: 100%;
+                }
+            </style>
             <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
 
             <!-- Type -->
@@ -61,72 +69,87 @@
                 <label for="type">Type : </label>
                 <select name="type">
                     <option value="">Type</option>
-                    <option value="Aquatique">Aquatique</option>
-                    <option value="Volante">Volante</option>
-                    <option value="Terrestre">Terrestre</option>
+                    <option value="Cuir">Cuir</option>
+                    <option value="Tissu">Tissu</option>
+                    <option value="Plaque">Plaque</option>
+                    <option value="Mailles">Mailles</option>
+                    <option value="Arme">Arme</option>
                 </select>
             </div>
 
 
             <div class="filter">
-                <label for="difficulty">Difficulty : </label>
-                <select name="difficulty">
-                    <option value="">Difficulty</option>
-                    <option value="Facile">Easy</option>
-                    <option value="Moyen">Medium</option>
-                    <option value="Difficile">Difficult</option>
+                <label for="emplacement">Emplacement : </label>
+                <select name="emplacement">
+                    <option value="">Emplacement</option>
+                    <option value="Mains">Mains</option>
+                    <option value="Tenu">Tenu</option>
+                    <option value="Torse">Torse</option>
+                    <option value="Pieds">Pieds</option>
+                    <option value="Tête">Tête</option>
+                    <option value="Jambes">Jambes</option>
+                    <option value="Epaules">Epaules</option>
+                    <option value="Taille">Taille</option>
+                    <option value="Poignets">Poignets</option>
                 </select>
             </div>
 
             <div class="filter">
-                <label for="source">Source : </label>
+                <label for="region">Région : </label>
+                <select name="region">
+                    <option value="">Région</option>
+                    <option value="Aberrus">Aberrus</option>
+                    <option value="Amirdrassil Espoir du Rêve">Amirdrassil Espoir du Rêve</option>
+                    <option value="Amirdrassil, le Rêve Emeraude">Amirdrassil, le Rêve Emeraude</option>
+                    <option value="Antorus le trône Ardent">Antorus le trône Ardent</option>
+                    <option value="Ataldazar">Ataldazar</option>
+                    <option value="Aube infini">Aube infini</option>
+                    <option value="Azshara">Azshara</option>
+                    <option value="Bassin Arathi">Bassin Arathi</option>
+                    <option value="Bastion du crépuscule">Bastion du crépuscule</option>
+                    <option value="Bataille de Dazaralor">Bataille de Dazaralor</option>
+                    <option value="Cap Strangleronce">Cap Strangleronce</option>
+                    <option value="Caveaux Mogushan">Caveaux Mogushan</option>
+                    <option value="Caverne du Sanctuaire du serpent">Caverne du Sanctuaire du serpent</option>
+                    <option value="Château Nathria">Château Nathria</option>
+                    <option value="Clairières de Tirisfal">Clairières de Tirisfal</option>
+                    <option value="Coeur de la Peur">Coeur de la Peur</option>
+                    <option value="Couronne de glace">Couronne de glace</option>
+                    <option value="Dalaran">Dalaran</option>
+                    <option value="Dawn of the Infinite">Dawn of the Infinite</option>
+                    <option value="Desolace">Desolace</option>
+                    <option value="Désolation des dragons">Désolation des dragons</option>
+                    <option value="Dun Morogh">Dun Morogh</option>
+                    <option value="Fer-de-Lance">Fer-de-Lance</option>
+                    <option value="Féralas">Féralas</option>
+
+                </select>
+            </div>
+
+            </div>
+
+            <div class="filter">
+                <label for="source">Moyen d'obtention : </label>
                 <select name="source">
-                    <option value="">Source</option>
-                    <option value="Anniversaire de WoW">WoW Anniversary</option>
-                    <option value="Métiers">Crafting</option>
-                    <option value="Boutique">Shop</option>
-                    <option value="Butin">Loot</option>
-                    <option value="Cartes à collectionner">Cards collection</option>
-                    <option value="Comptoir">Counter</option>
-                    <option value="Evenèments mondiaux">Worldwide events</option>
-                    <option value="Divers">Others</option>
-                    <option value="Exploration des îles">Islands exploration</option>
-                    <option value="Hauts-faits">Achievments</option>
-                    <option value="Non implémenté">Not implemented</option>
-                    <option value="Promotion Blizzard">Blizzard promotion</option>
-                    <option value="PvP côté">PvP</option>
-                    <option value="Quête">Quests</option>
-                    <option value="Retiré">Not available</option>
-                    <option value="Secret">Secrets</option>
-                    <option value="Vendeur">Seller</option>
-
-                </select>
-            </div>
-
-            <div class="filter">
-                <label for="extension">Extensions : </label>
-                <select name="extension">
-                    <option value="">Extensions</option>
-                    <option value="Battle for Azeroth">Battle for Azeroth</option>
-                    <option value="Burning Crusade">Burning Crusade</option>
-                    <option value="Cataclysm">Cataclysm</option>
-                    <option value="Dragonflight">Dragonflight</option>
-                    <option value="Légion">Légion</option>
-                    <option value="Mists of Pandaria">Mists of Pandaria</option>
-                    <option value="Shadowlands">Shadowlands</option>
-                    <option value="Warlords of Draenor">Warlords of Draenor</option>
-                    <option value="WoW Vanilla">WoW Vanilla</option>
-                    <option value="Wrath of the Lich King">Wrath of the Lich King</option>
-                </select>
-            </div>
-
-            <div class="filter">
-                <label for="faction">Faction : </label>
-                <select name="faction">
-                    <option value="">Faction</option>
-                    <option value="Alliance">Alliance</option>
-                    <option value="Horde">Horde</option>
-                    <option value="Neutre">Neutre</option>
+                    <option value="">Moyen d'obtention</option>
+                    <option value="Anniversaire de WoW">Anniversaire de WoW</option>
+                    <option value="Métiers">Métiers</option>
+                    <option value="Boutique">Boutique</option>
+                    <option value="Butin">Butin</option>
+                    <option value="Cartes à collectionner">Cartes à collectionner</option>
+                    <option value="Comptoir">Comptoir</option>
+                    <option value="Congrégation">Congrégation</option>
+                    <option value="Evenèments mondiaux">Evenèments mondiaux</option>
+                    <option value="Divers">Divers</option>
+                    <option value="Exploration des îles">Exploration des îles</option>
+                    <option value="Hauts-faits">Hauts-faits</option>
+                    <option value="Non implémenté">Non implémenté</option>
+                    <option value="Promotion Blizzard">Promotion Blizzard</option>
+                    <option value="PvP côté">PvP côté</option>
+                    <option value="Quête">Quête</option>
+                    <option value="Retiré">Retiré</option>
+                    <option value="Secret">Secret</option>
+                    <option value="Vendeur">Vendeur</option>
                 </select>
             </div>
 
@@ -183,53 +206,44 @@
             // Godefroy
             // Step 1
             // Pour chaque paramètre, on peut créé un boolean correspondant
-            $difficulty = $_POST["difficulty"];
-            $haveDifficulty = false;
-            $source = $_POST["source"];
-            $haveSource = false;
-            $extension = $_POST["extension"];
-            $haveExtension = false;
-            $faction = $_POST["faction"];
-            $haveFaction = false;
             $type = $_POST["type"];
             $haveType = false;
+            $emplacement = $_POST["emplacement"];
+            $haveEmplacement = false;
+            $region = $_POST["region"];
+            $haveRegion = false;
+            $source = $_POST["source"];
+            $haveSource = false;
 
 
-            $sqlQuery = 'SELECT * FROM t_monture 
-            INNER JOIN tj_m_appartient_fa_mafa on tj_m_appartient_fa_mafa.M_Id=t_monture.M_Id 
-            INNER JOIN t_m_faction_mfa on t_m_faction_mfa.MFA_Id=tj_m_appartient_fa_mafa.MFA_Id 
-            INNER JOIN t_m_difficulte_mdi on t_m_difficulte_mdi.MDI_Id=t_monture.MDI_Id 
-            INNER JOIN t_moyen_obtention_mo on t_moyen_obtention_mo.MO_Id=t_monture.MO_Id 
-            INNER JOIN t_m_extensions_me on t_m_extensions_me.ME_Id=t_monture.ME_Id
-            INNER JOIN t_m_type_mty on t_m_type_mty.MTY_Id=t_monture.MTY_Id';
+            $sqlQuery = 'SELECT * FROM t_equipement 
+            INNER JOIN t_moyen_obtention_mo on t_moyen_obtention_mo.MO_Id=t_equipement.MO_id 
+            INNER JOIN t_e_region_er_ on t_e_region_er_.ER_Id=t_equipement.ER_Id 
+            INNER JOIN t_e_emplacement_ee on t_e_emplacement_ee.EE_Id=t_equipement.EE_Id 
+            INNER JOIN t_e_type_ety on t_e_type_ety.ETY_Id=t_equipement.ETY_Id';
 
 
             // Godefroy
             // Step 2
             // On passe le boolean à True pour chaque critère utilisé.
-            if (!empty($_POST['difficulty'])) // si une region à été choisie
+            if (!empty($_POST['region'])) // si une region à été choisie
             {
-                $where[] = ' MDI_Nom = ' . ':difficulty';
-                $haveDifficulty = true;
+                $where[] = ' ER_Nom = ' . ':region';
+                $haveRegion = true;
             }
             if (!empty($_POST['source'])) // si une region à été choisie
             {
                 $where[] = ' MO_Nom = ' . ':source';
                 $haveSource = true;
             }
-            if (!empty($_POST['extension'])) // si une region à été choisie
+            if (!empty($_POST['emplacement'])) // si une region à été choisie
             {
-                $where[] = ' ME_Nom = ' . ':extension';
-                $haveExtension = true;
-            }
-            if (!empty($_POST['faction'])) // si une region à été choisie
-            {
-                $where[] = ' MFA_Nom = ' . ':faction';
-                $haveFaction = true;
+                $where[] = ' EE_Nom = ' . ':emplacement';
+                $haveEmplacement = true;
             }
             if (!empty($_POST['type'])) // si une region à été choisie
             {
-                $where[] = ' MTY_Nom = ' . ':type';
+                $where[] = ' ETY_Nom = ' . ':type';
                 $haveType = true;
             }
 
@@ -247,17 +261,14 @@
             // Les IFs sont basiques, on peut les mettre chacun sur une ligne 
             // pour que ça soit plus facile à comprendre/lire
             $sth = $dbco->prepare($sqlQuery);
-            if ($haveFaction) {
-                $sth->bindParam(':faction', $faction, PDO::PARAM_STR);
+            if ($haveRegion) {
+                $sth->bindParam(':region', $region, PDO::PARAM_STR);
             }
-            if ($haveExtension) {
-                $sth->bindParam(':extension', $extension, PDO::PARAM_STR);
+            if ($haveEmplacement) {
+                $sth->bindParam(':emplacement', $emplacement, PDO::PARAM_STR);
             }
             if ($haveSource) {
                 $sth->bindParam(':source', $source, PDO::PARAM_STR);
-            }
-            if ($haveDifficulty) {
-                $sth->bindParam(':difficulty', $difficulty, PDO::PARAM_STR);
             }
             if ($haveType) {
                 $sth->bindParam(':type', $type, PDO::PARAM_STR);
@@ -273,33 +284,32 @@
 
             foreach ($resultat as $resultats) {
                 ?>
-    <section>
-        <div class="actu">
-            <article class="article">
-                <div class="articleMount">
-                    <div class="textMount">
-                        <h3>
-                            <?php echo $resultats['M_Nom'] ?>
-                        </h3>
-                        <p>
-                            <?php echo $resultats['MO_Nom'] ?>
-                            <?php echo $resultats['MDI_Nom'] ?>
-                            <?php echo $resultats['ME_Nom'] ?>
-                            <?php echo $resultats['MFA_Nom'] ?>
-                            <?php echo $resultats['MTY_Nom'] ?>
+                <section>
+                    <div class="actu">
+                        <article class="article">
+                            <div class="articleMount">
+                                <div class="textMount">
+                                    <h3>
+                                        <?php echo $resultats['E_Nom'] ?>
+                                    </h3>
+                                    <p>
+                                        <?php echo $resultats['ETY_Nom'] ?>
+                                        <?php echo $resultats['EE_Nom'] ?>
+                                        <?php echo $resultats['ER_Nom'] ?>
+                                        <?php echo $resultats['MO_Nom'] ?>
 
-                        </p>
-                        <button class="read" type="button">Lire la suite</button>
+                                    </p>
+                                    <button class="read" type="button">Lire la suite</button>
+                                </div>
+
+                                <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
+                            </div>
                     </div>
+                    </article>
+                    </div>
+                </section>
 
-                    <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
-                </div>
-        </div>
-        </article>
-        </div>
-    </section>
-
-    <?php
+                <?php
             }
         }
     }
