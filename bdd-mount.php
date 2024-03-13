@@ -32,7 +32,6 @@ $conn = null;
     <meta charset="utf-8" />
     <title>WoW Collection</title>
 
-    <link rel="stylesheet" href="./css/style-equipment.css" />
 
     <!-- Footer -->
     <link rel="stylesheet"
@@ -43,6 +42,9 @@ $conn = null;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="./css/style-equipment.css" />
 </head>
 
 <body>
@@ -81,12 +83,12 @@ $conn = null;
         <form action="bdd-mount.php" method="post" class="formMount">
 
             <style>
-            form {
-                background-image: url('./Assets/header-mounts.jpg');
-                background-size: cover;
-                height: 600px;
-                width: 100%;
-            }
+                form {
+                    background-image: url('./Assets/header-mounts.jpg');
+                    background-size: cover;
+                    height: 600px;
+                    width: 100%;
+                }
             </style>
 
             <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
@@ -300,80 +302,82 @@ $conn = null;
             ?>
 
 
-    <div class="actu">
-        <article class="article">
-            <div class="articleMount">
-                <div class="textMount">
-                    <h3>
-                        <?php echo $resultats['M_Nom'] ?>
-                    </h3>
+            <div class="actu">
+                <article class="article">
+                    <div class="articleMount">
+                        <div class="textMount">
+                            <h3>
+                                <?php echo $resultats['M_Nom'] ?>
+                            </h3>
 
-                    <div class="criteriaMount">
-
-                        <div class="difficulty">
-
-                            <img src="./Assets/mounts/picto/star.png" class="picto">
-
-                            <?php if (!empty($_POST['difficulty'])) {
-                                                if ($difficulty === "Facile") {
-                                                    echo '<style> .difficulty {color:green;} </style>';
-                                                    echo $resultats['MDI_Nom'];
-                                                } ?>
-
-                            <?php if ($difficulty === "Moyen") {
-                                                    echo '<style> .difficulty {color:brown;} </style>';
-                                                    echo $resultats['MDI_Nom'];
-                                                } ?>
-
-                            <?php if ($difficulty === "Difficile") {
-                                                    echo '<style> .difficulty {color:brown;} </style>';
-                                                    echo $resultats['MDI_Nom'];
-                                                }
-                                            } else {
-                                               echo $resultats['MDI_Nom'];
-                                            } ?>
+                            <div class="criteriaMount">
 
 
-                            <div class="mountDetail">
-                                <?php echo $resultats['MO_Nom'] ?>
+                                <div class="difficulty">
+
+                                    <img src="./Assets/mounts/picto/star.png" class="picto">
+
+                                    <?php if (!empty($_POST['difficulty'])) {
+                                        if ($difficulty === "Facile") {
+                                            echo '<style> .difficulty {color:green;} </style>';
+                                            echo $resultats['MDI_Nom'];
+                                        } ?>
+
+                                        <?php if ($difficulty === "Moyen") {
+                                            echo '<style> .difficulty {color:brown;} </style>';
+                                            echo $resultats['MDI_Nom'];
+                                        } ?>
+
+                                        <?php if ($difficulty === "Difficile") {
+                                            echo '<style> .difficulty {color:brown;} </style>';
+                                            echo $resultats['MDI_Nom'];
+                                        }
+                                    } else {
+                                        echo $resultats['MDI_Nom'];
+                                    } ?>
+
+                                </div>
+
+
+                                <div class="mountDetail">
+                                    <?php echo $resultats['MO_Nom'] ?>
+                                </div>
+                                <div class="mountDetail">
+                                    <?php echo $resultats['ME_Nom'] ?>
+                                </div>
+                                <div class="mountDetail">
+                                    <?php echo $resultats['MFA_Nom'] ?>
+                                </div>
+                                <div class="mountDetail">
+                                    <?php echo $resultats['MTY_Nom'] ?>
+                                </div>
+
                             </div>
-                            <div class="mountDetail">
-                                <?php echo $resultats['ME_Nom'] ?>
-                            </div>
-                            <div class="mountDetail">
-                                <?php echo $resultats['MFA_Nom'] ?>
-                            </div>
-                            <div class="mountDetail">
-                                <?php echo $resultats['MTY_Nom'] ?>
-                            </div>
+
 
                         </div>
-
+                        <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
                     </div>
-
-                    <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
-                </div>
+                </article>
             </div>
-        </article>
-    </div>
-    </section>
-    </div>
+            </section>
+            </div>
 
 
 
-    </div>
+            </div>
 
-    </div>
+            </div>
 
 
 
-    <?php
-            }
-
-            echo "<p class=count> total results : $i</p>";
+            <?php
         }
 
-       
+        echo "<p class=count> total results : $i</p>";
+    }
+
+
 
     ?>
 
