@@ -13,7 +13,8 @@
 
 
 body {
-    background-color: #eaeded ;
+    /* background-color: #eaeded ; */
+    background-color: red;
     margin:0px;
     font-size:medium;
     font-family: 'acherus_grotesque_regularRg','calibri','serif';
@@ -213,7 +214,7 @@ input[type=submit] {
 .article div {
     
     margin-bottom:10px;
-    padding:1%;
+    /* padding:1%; */
 
     
 }
@@ -221,8 +222,8 @@ input[type=submit] {
 /* format de l'image */
 
 .photoMount {
-    width: 20%;
-    height : 50%;
+    width:15%;
+    height:5%;
     margin-left:10px;
 }
 
@@ -234,14 +235,15 @@ input[type=submit] {
     margin-top:1%;
     align-items: center;
     flex-wrap: wrap;
-    
-    
-}
-.articleMount, img{
     flex:1;
     
     
 }
+/* .articleMount, img{
+    flex:3;
+    
+    
+} */
 .difficulty {
   display:flex;
   align-items: center;
