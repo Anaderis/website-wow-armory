@@ -42,7 +42,7 @@
                     <input type="submit" name="submit" class="submit" value="Search" />
                 </li> -->
                 <li>
-                    <a href="./login.html"><button class="login" type="button">Login</button></a>
+                    <a href="./login.php"><button class="login" type="button">Login</button></a>
                 </li>
             </ul>
 
@@ -273,33 +273,33 @@
 
             foreach ($resultat as $resultats) {
                 ?>
-                <section>
-                    <div class="actu">
-                        <article class="article">
-                            <div class="articleMount">
-                                <div class="textMount">
-                                    <h3>
-                                        <?php echo $resultats['M_Nom'] ?>
-                                    </h3>
-                                    <p>
-                                        <?php echo $resultats['MO_Nom'] ?>
-                                        <?php echo $resultats['MDI_Nom'] ?>
-                                        <?php echo $resultats['ME_Nom'] ?>
-                                        <?php echo $resultats['MFA_Nom'] ?>
-                                        <?php echo $resultats['MTY_Nom'] ?>
+    <section>
+        <div class="actu">
+            <article class="article">
+                <div class="articleMount">
+                    <div class="textMount">
+                        <h3>
+                            <?php echo $resultats['M_Nom'] ?>
+                        </h3>
+                        <p>
+                            <?php echo $resultats['MO_Nom'] ?>
+                            <?php echo $resultats['MDI_Nom'] ?>
+                            <?php echo $resultats['ME_Nom'] ?>
+                            <?php echo $resultats['MFA_Nom'] ?>
+                            <?php echo $resultats['MTY_Nom'] ?>
 
-                                    </p>
-                                    <button class="read" type="button">Lire la suite</button>
-                                </div>
-
-                                <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
-                            </div>
+                        </p>
+                        <button class="read" type="button">Lire la suite</button>
                     </div>
-                    </article>
-                    </div>
-                </section>
 
-                <?php
+                    <img src="<?php echo $resultats['chemin_image'] ?>" class="photoMount" />
+                </div>
+        </div>
+        </article>
+        </div>
+    </section>
+
+    <?php
             }
         }
     }
