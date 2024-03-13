@@ -20,9 +20,9 @@ body {
 }
 
 .imgHeader {
-    background-image: url(../Assets/background.avif);
+    background-image: url(../Assets/backgroundaccueil.jpg);
     background-size: cover;
-    height:600px;
+    height:800px;
     width:100%;
 }
 
