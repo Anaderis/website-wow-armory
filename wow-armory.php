@@ -22,33 +22,28 @@
 </head>
 
 <body>
+<div class="imgHeader">
     <header>
-        <nav id="menus">
+    <nav id="menus">
             <ul>
                 <li>
-                    <a href="./wow-armory.html">
+                    <a href="./wow-armory.php">
                         <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
                 </li>
-                <li><a href="./bdd-mount.php">Montures </a></li>
-                <li><a href="./equipements.html">Equipements</a></li>
-                <li><a href="./map.html">Carte</a></li>
-                <li><a href="./MonCompte.html">Mon compte</a></li>
-                <li>
-                    <input type="text" name="text" class="search" placeholder="Recherche" />
-                </li>
+                <li><a href="./bdd-mount.php">Mounts </a></li>
+                <li><a href="./equipements.php">Equipments</a></li>
 
-                <li>
-                    <input type="submit" name="submit" class="submit" value="Search" />
-                </li>
+                <li><a href="./MonCompte.html">My account</a></li>
                 <li>
                     <a href="./login.php"><button class="login" type="button">Login</button></a>
                 </li>
             </ul>
+
         </nav>
 
-        <div class="imgHeader"></div>
+        
     </header>
-
+    </div>
     <section>
         <div class="actu">
             <article>

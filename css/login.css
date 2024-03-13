@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url('https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/FJPT5455KR5K1589912863345.jpg');
+    background-image: url('../Assets/backgroundlogin.avif');
     background-size: cover;
     background-attachment:fixed;
     width:auto;
