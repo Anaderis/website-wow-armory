@@ -7,8 +7,6 @@
     <meta charset="utf-8" />
     <title>WoW Collection</title>
 
-
-
     <!-- Footer -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
@@ -19,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style-equipment.css" />
+
 </head>
 
 <body>
@@ -293,6 +292,7 @@
                                     <h3>
                                         <?php echo $resultats['E_Nom'] ?>
                                     </h3>
+
                                     <p>
                                         <?php echo $resultats['ETY_Nom'] ?>
                                         <?php echo $resultats['EE_Nom'] ?>
@@ -304,6 +304,29 @@
                                 </div>
 
                                 <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount" />
+
+                                    <div class="criteriaMount">
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['ETY_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['EE_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['ER_Nom'] ?>
+                                        </div>
+                                        <div class="mountDetail">
+                                            <?php echo $resultats['MO_Nom'] ?>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
+                                    alt="Assets/mounts/default.jpg" />
+
                             </div>
                     </div>
                     </article>
