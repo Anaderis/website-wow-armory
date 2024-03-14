@@ -74,6 +74,7 @@ form input{
 
 
 nav{
+
     width:auto;
     height:25%;
     border-radius: 10px; 
@@ -151,7 +152,7 @@ article div {
 }
 
 .invincible {
-    width:40%;
+    min-width:40%;
     margin-left:10px;
 }
 .article1 {

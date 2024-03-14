@@ -22,153 +22,141 @@
 
 <body>
 
+    <div class="imgHeaderEquipment">
+        <header>
 
-    <header>
-
-        <nav id="menus">
-            <ul>
-                <li>
-                    <a href="./wow-armory.php">
-                        <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
-                </li>
-                <li><a href="./bdd-mount.php">Mounts </a></li>
-                <li><a href="./equipements.php">Equipments</a></li>
-                <li><a href="./map.html">Map</a></li>
-                <li><a href="./MonCompte.html">My account</a></li>
-                <li>
-                    <input type="text" name="text" class="search" placeholder="Recherche" />
-                </li>
-                <!-- <li>
+            <nav id="menus">
+                <ul>
+                    <li>
+                        <a href="./wow-armory.php">
+                            <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
+                    </li>
+                    <li><a href="./bdd-mount.php">Montures </a></li>
+                    <li><a href="./equipements.php">Equipements</a></li>
+                    <li><a href="./MonCompte.html">Mon compte</a></li>
+                    <li>
+                        <input type="text" name="text" class="search" placeholder="Recherche" />
+                    </li>
+                    <!-- <li>
                     <input type="submit" name="submit" class="submit" value="Search" />
                 </li> -->
-                <li>
-                    <a href="./login.php"><button class="login" type="button">Login</button></a>
-                </li>
-            </ul>
+                    <li>
+                        <a href="./login.php"><button class="login" type="button">Login</button></a>
+                    </li>
+                </ul>
 
-        </nav>
-
-
-
-
-        <form action="equipements.php" method="post" class="formMount">
-
-            <style>
-                form {
-                    background-image: url('./Assets/header-equipement.jpg');
-                    background-size: cover;
-                    height: 600px;
-                    width: 100%;
-                }
-            </style>
-            <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
-
-            <!-- Type -->
-
-            <div class="filter">
-                <label for="type">Type : </label>
-                <select name="type">
-                    <option value="">Type</option>
-                    <option value="Cuir">Cuir</option>
-                    <option value="Tissu">Tissu</option>
-                    <option value="Plaque">Plaque</option>
-                    <option value="Mailles">Mailles</option>
-                    <option value="Arme">Arme</option>
-                </select>
-            </div>
-
-
-            <div class="filter">
-                <label for="emplacement">Emplacement : </label>
-                <select name="emplacement">
-                    <option value="">Emplacement</option>
-                    <option value="Mains">Mains</option>
-                    <option value="Tenu">Tenu</option>
-                    <option value="Torse">Torse</option>
-                    <option value="Pieds">Pieds</option>
-                    <option value="Tête">Tête</option>
-                    <option value="Jambes">Jambes</option>
-                    <option value="Epaules">Epaules</option>
-                    <option value="Taille">Taille</option>
-                    <option value="Poignets">Poignets</option>
-                </select>
-            </div>
-
-            <div class="filter">
-                <label for="region">Région : </label>
-                <select name="region">
-                    <option value="">Région</option>
-                    <option value="Aberrus">Aberrus</option>
-                    <option value="Amirdrassil Espoir du Rêve">Amirdrassil Espoir du Rêve</option>
-                    <option value="Amirdrassil, le Rêve Emeraude">Amirdrassil, le Rêve Emeraude</option>
-                    <option value="Antorus le trône Ardent">Antorus le trône Ardent</option>
-                    <option value="Ataldazar">Ataldazar</option>
-                    <option value="Aube infini">Aube infini</option>
-                    <option value="Azshara">Azshara</option>
-                    <option value="Bassin Arathi">Bassin Arathi</option>
-                    <option value="Bastion du crépuscule">Bastion du crépuscule</option>
-                    <option value="Bataille de Dazaralor">Bataille de Dazaralor</option>
-                    <option value="Cap Strangleronce">Cap Strangleronce</option>
-                    <option value="Caveaux Mogushan">Caveaux Mogushan</option>
-                    <option value="Caverne du Sanctuaire du serpent">Caverne du Sanctuaire du serpent</option>
-                    <option value="Château Nathria">Château Nathria</option>
-                    <option value="Clairières de Tirisfal">Clairières de Tirisfal</option>
-                    <option value="Coeur de la Peur">Coeur de la Peur</option>
-                    <option value="Couronne de glace">Couronne de glace</option>
-                    <option value="Dalaran">Dalaran</option>
-                    <option value="Dawn of the Infinite">Dawn of the Infinite</option>
-                    <option value="Desolace">Desolace</option>
-                    <option value="Désolation des dragons">Désolation des dragons</option>
-                    <option value="Dun Morogh">Dun Morogh</option>
-                    <option value="Fer-de-Lance">Fer-de-Lance</option>
-                    <option value="Féralas">Féralas</option>
-
-                </select>
-            </div>
-
-            </div>
-
-            <div class="filter">
-                <label for="source">Moyen d'obtention : </label>
-                <select name="source">
-                    <option value="">Moyen d'obtention</option>
-                    <option value="Anniversaire de WoW">Anniversaire de WoW</option>
-                    <option value="Métiers">Métiers</option>
-                    <option value="Boutique">Boutique</option>
-                    <option value="Butin">Butin</option>
-                    <option value="Cartes à collectionner">Cartes à collectionner</option>
-                    <option value="Comptoir">Comptoir</option>
-                    <option value="Congrégation">Congrégation</option>
-                    <option value="Evenèments mondiaux">Evenèments mondiaux</option>
-                    <option value="Divers">Divers</option>
-                    <option value="Exploration des îles">Exploration des îles</option>
-                    <option value="Hauts-faits">Hauts-faits</option>
-                    <option value="Non implémenté">Non implémenté</option>
-                    <option value="Promotion Blizzard">Promotion Blizzard</option>
-                    <option value="PvP côté">PvP côté</option>
-                    <option value="Quête">Quête</option>
-                    <option value="Retiré">Retiré</option>
-                    <option value="Secret">Secret</option>
-                    <option value="Vendeur">Vendeur</option>
-                </select>
-            </div>
-
-            <div>
-                <input type="submit" value="Search" name="submit">
-            </div>
-
-
-
-            <!-- // header("Location:list-mount.php"); -->
+            </nav>
 
 
 
 
+            <form action="equipements.php" method="post" class="formMount">
 
-        </form>
+
+                <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
+
+                <!-- Type -->
+
+                <div class="filter">
+
+                    <label for="type">Type : </label>
+                    <select name="type">
+                        <option value="">Type</option>
+                        <option value="Cuir">Cuir</option>
+                        <option value="Tissu">Tissu</option>
+                        <option value="Plaque">Plaque</option>
+                        <option value="Mailles">Mailles</option>
+                        <option value="Arme">Arme</option>
+                    </select>
+
+                    <label for="emplacement">Emplacement : </label>
+                    <select name="emplacement">
+                        <option value="">Emplacement</option>
+                        <option value="Mains">Mains</option>
+                        <option value="Tenu">Tenu</option>
+                        <option value="Torse">Torse</option>
+                        <option value="Pieds">Pieds</option>
+                        <option value="Tête">Tête</option>
+                        <option value="Jambes">Jambes</option>
+                        <option value="Epaules">Epaules</option>
+                        <option value="Taille">Taille</option>
+                        <option value="Poignets">Poignets</option>
+                    </select>
+                </div>
+
+                <div class="filter2">
+                    <label for="region">Région : </label>
+                    <select name="region">
+                        <option value="">Région</option>
+                        <option value="Aberrus">Aberrus</option>
+                        <option value="Amirdrassil Espoir du Rêve">Amirdrassil Espoir du Rêve</option>
+                        <option value="Amirdrassil, le Rêve Emeraude">Amirdrassil, le Rêve Emeraude</option>
+                        <option value="Antorus le trône Ardent">Antorus le trône Ardent</option>
+                        <option value="Ataldazar">Ataldazar</option>
+                        <option value="Aube infini">Aube infini</option>
+                        <option value="Azshara">Azshara</option>
+                        <option value="Bassin Arathi">Bassin Arathi</option>
+                        <option value="Bastion du crépuscule">Bastion du crépuscule</option>
+                        <option value="Bataille de Dazaralor">Bataille de Dazaralor</option>
+                        <option value="Cap Strangleronce">Cap Strangleronce</option>
+                        <option value="Caveaux Mogushan">Caveaux Mogushan</option>
+                        <option value="Caverne du Sanctuaire du serpent">Caverne du Sanctuaire du serpent</option>
+                        <option value="Château Nathria">Château Nathria</option>
+                        <option value="Clairières de Tirisfal">Clairières de Tirisfal</option>
+                        <option value="Coeur de la Peur">Coeur de la Peur</option>
+                        <option value="Couronne de glace">Couronne de glace</option>
+                        <option value="Dalaran">Dalaran</option>
+                        <option value="Dawn of the Infinite">Dawn of the Infinite</option>
+                        <option value="Desolace">Desolace</option>
+                        <option value="Désolation des dragons">Désolation des dragons</option>
+                        <option value="Dun Morogh">Dun Morogh</option>
+                        <option value="Fer-de-Lance">Fer-de-Lance</option>
+                        <option value="Féralas">Féralas</option>
+
+                    </select>
+
+                    <label for="source">Moyen d'obtention : </label>
+                    <select name="source">
+                        <option value="">Moyen d'obtention</option>
+                        <option value="Anniversaire de WoW">Anniversaire de WoW</option>
+                        <option value="Métiers">Métiers</option>
+                        <option value="Boutique">Boutique</option>
+                        <option value="Butin">Butin</option>
+                        <option value="Cartes à collectionner">Cartes à collectionner</option>
+                        <option value="Comptoir">Comptoir</option>
+                        <option value="Congrégation">Congrégation</option>
+                        <option value="Evenèments mondiaux">Evenèments mondiaux</option>
+                        <option value="Divers">Divers</option>
+                        <option value="Exploration des îles">Exploration des îles</option>
+                        <option value="Hauts-faits">Hauts-faits</option>
+                        <option value="Non implémenté">Non implémenté</option>
+                        <option value="Promotion Blizzard">Promotion Blizzard</option>
+                        <option value="PvP côté">PvP côté</option>
+                        <option value="Quête">Quête</option>
+                        <option value="Retiré">Retiré</option>
+                        <option value="Secret">Secret</option>
+                        <option value="Vendeur">Vendeur</option>
+                    </select>
+
+
+
+                </div>
+                <div class="searchEquipment">
+                    <input type="submit" value="Rechercher" name="submit">
+                </div>
+
+
+    </div>
+
+
+
+
+    </form>
 
 
     </header>
+
+    </div>
 
 
     <!-- /*----------------------------Connexion BDD------------------------*/ -->
@@ -214,6 +202,7 @@
             $haveRegion = false;
             $source = $_POST["source"];
             $haveSource = false;
+            $i = 0;
 
 
             $sqlQuery = 'SELECT * FROM t_equipement 
@@ -283,6 +272,7 @@
     
 
             foreach ($resultat as $resultats) {
+                $i++;
                 ?>
                 <section>
                     <div class="actu">
@@ -335,7 +325,10 @@
 
                 <?php
             }
+            echo "<p class=count> Résultats : $i</p>";
+
         }
+
     }
 
     /*On capture les exceptions si une exception est lancée et on affiche

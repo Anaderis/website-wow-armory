@@ -45,143 +45,153 @@ $conn = null;
 
 
     <link rel="stylesheet" href="./css/style-equipment.css" />
+
+    <!-- <style>
+        form {
+            background-image: url('./Assets/header-mounts.jpg');
+            background-size: cover;
+            height: 800px;
+            width: 100%;
+        }
+    </style> -->
+
+
 </head>
 
 <body>
 
 
 
-    <header>
+    <div class="imgHeaderMount">
 
-        <nav id="menus">
-            <ul>
-                <li>
-                    <a href="./wow-armory.php">
-                        <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
-                </li>
-                <li><a href="./bdd-mount.php">Mounts </a></li>
-                <li><a href="./equipements.php">Equipments</a></li>
-                <li><a href="./map.html">Map</a></li>
+        <header>
 
-                <li><a href="./MonCompte.html">My account</a></li>
-                <li>
-                    <input type="text" name="text" class="search" placeholder="Recherche" />
-                </li>
-                <!-- <li>
+
+
+            <nav id="menus">
+                <ul>
+                    <li>
+                        <a href="./wow-armory.php">
+                            <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
+                    </li>
+                    <li><a href="./bdd-mount.php">Montures </a></li>
+                    <li><a href="./equipements.php">Equipements</a></li>
+                    <li><a href="./MonCompte.html">Mon compte</a></li>
+                    <!-- <li>
                     <input type="submit" name="submit" class="submit" value="Search" />
                 </li> -->
-                <li>
-                    <a href="./login.php"><button class="login" type="button">Login</button></a>
-                </li>
-            </ul>
+                    <li>
+                        <a href="./login.php"><button class="login" type="button">Login</button></a>
+                    </li>
+                </ul>
 
-        </nav>
-
-
+            </nav>
 
 
-        <form action="bdd-mount.php" method="post" class="formMount">
-
-            <style>
-                form {
-                    background-image: url('./Assets/header-mounts.jpg');
-                    background-size: cover;
-                    height: 600px;
-                    width: 100%;
-                }
-            </style>
-
-            <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
-
-            <!-- Type -->
-
-            <div class="filter">
-
-                <label for="type">Type</label>
-                <select name="type">
-                    <option value="">Type</option>
-                    <option value="Aquatique">Aquatique</option>
-                    <option value="Volante">Volante</option>
-                    <option value="Terrestre">Terrestre</option>
-                </select>
 
 
-                <label for="difficulty">Difficulty</label>
-                <select name="difficulty">
-                    <option value="">Difficulty</option>
-                    <option value="Facile">Easy</option>
-                    <option value="Moyen">Medium</option>
-                    <option value="Difficile">Difficult</option>
-                </select>
 
-                <label for="source">Source</label>
-                <select name="source">
-                    <option value="">Source</option>
-                    <option value="Anniversaire de WoW">WoW Anniversary</option>
-                    <option value="Métiers">Crafting</option>
-                    <option value="Boutique">Shop</option>
-                    <option value="Butin">Loot</option>
-                    <option value="Cartes à collectionner">Cards collection</option>
-                    <option value="Comptoir">Counter</option>
-                    <option value="Evenèments mondiaux">Worldwide events</option>
-                    <option value="Divers">Others</option>
-                    <option value="Exploration des îles">Islands exploration</option>
-                    <option value="Hauts-faits">Achievments</option>
-                    <option value="Non implémenté">Not implemented</option>
-                    <option value="Promotion Blizzard">Blizzard promotion</option>
-                    <option value="PvP côté">PvP</option>
-                    <option value="Quête">Quests</option>
-                    <option value="Retiré">Not available</option>
-                    <option value="Secret">Secrets</option>
-                    <option value="Vendeur">Seller</option>
+            <form action="bdd-mount.php" method="post" class="formMount">
 
-                </select>
-            </div>
 
-            <div class="filter2">
 
-                <label for="extension">Extensions</label>
-                <select name="extension">
-                    <option value="">Extensions</option>
-                    <option value="Battle for Azeroth">Battle for Azeroth</option>
-                    <option value="Burning Crusade">Burning Crusade</option>
-                    <option value="Cataclysm">Cataclysm</option>
-                    <option value="Dragonflight">Dragonflight</option>
-                    <option value="Légion">Légion</option>
-                    <option value="Mists of Pandaria">Mists of Pandaria</option>
-                    <option value="Shadowlands">Shadowlands</option>
-                    <option value="Warlords of Draenor">Warlords of Draenor</option>
-                    <option value="WoW Vanilla">WoW Vanilla</option>
-                    <option value="Wrath of the Lich King">Wrath of the Lich King</option>
-                </select>
+                <!-- /*------------------------ FILTRES MONTURES-------------------*/ -->
 
-                <label for="faction">Faction</label>
-                <select name="faction">
-                    <option value="">Faction</option>
-                    <option value="Alliance">Alliance</option>
-                    <option value="Horde">Horde</option>
-                    <option value="Neutre">Neutre</option>
-                </select>
+                <!-- Type -->
 
-                <div>
-                    <input type="submit" value="Search" name="submit">
+                <div class="filter">
+
+                    <label for="type">Type</label>
+                    <select name="type">
+                        <option value="">Type</option>
+                        <option value="Aquatique">Aquatique</option>
+                        <option value="Volante">Volante</option>
+                        <option value="Terrestre">Terrestre</option>
+                    </select>
+
+
+                    <label for="difficulty">Difficulté</label>
+                    <select name="difficulty">
+                        <option value="">Difficulté</option>
+                        <option value="Facile">Facile</option>
+                        <option value="Moyen">Moyen</option>
+                        <option value="Difficile">Difficile</option>
+                        <option value="Argent réel">Argent réel</option>
+
+                    </select>
+
+                    <label for="source">Source</label>
+                    <select name="source">
+                        <option value="">Source</option>
+                        <option value="Anniversaire de WoW">Anniversaire de WoW</option>
+                        <option value="Métiers">Métier</option>
+                        <option value="Boutique">Boutique</option>
+                        <option value="Butin">Butin</option>
+                        <option value="Cartes à collectionner">Collection de cartes</option>
+                        <option value="Comptoir">Comptoir</option>
+                        <option value="Evenèments mondiaux">Evènements mondiaux</option>
+                        <option value="Divers">Autres</option>
+                        <option value="Exploration des îles">Exploration des îles</option>
+                        <option value="Hauts-faits">Hauts-faits</option>
+                        <option value="Non implémenté">Non implémenté</option>
+                        <option value="Promotion Blizzard">Blizzard promotion</option>
+                        <option value="PvP côté">PvP</option>
+                        <option value="Quête">Quêtes</option>
+                        <option value="Retiré">Retiré</option>
+                        <option value="Secret">Secrets</option>
+                        <option value="Vendeur">Vendeur</option>
+
+                    </select>
                 </div>
-            </div>
+
+                <div class="filter2">
+
+                    <label for="extension">Extensions</label>
+                    <select name="extension">
+                        <option value="">Extensions</option>
+                        <option value="Battle for Azeroth">Battle for Azeroth</option>
+                        <option value="Burning Crusade">Burning Crusade</option>
+                        <option value="Cataclysm">Cataclysm</option>
+                        <option value="Dragonflight">Dragonflight</option>
+                        <option value="Légion">Légion</option>
+                        <option value="Mists of Pandaria">Mists of Pandaria</option>
+                        <option value="Shadowlands">Shadowlands</option>
+                        <option value="Warlords of Draenor">Warlords of Draenor</option>
+                        <option value="WoW Vanilla">WoW Vanilla</option>
+                        <option value="Wrath of the Lich King">Wrath of the Lich King</option>
+                    </select>
+
+                    <label for="faction">Faction</label>
+                    <select name="faction">
+                        <option value="">Faction</option>
+                        <option value="Alliance">Alliance</option>
+                        <option value="Horde">Horde</option>
+                        <option value="Neutre">Neutre</option>
+                    </select>
+
+                    <div>
+                        <input type="submit" value="Rechercher" name="submit">
+                    </div>
+                </div>
 
 
 
 
 
-            <!-- // header("Location:list-mount.php"); -->
+                <!-- // header("Location:list-mount.php"); -->
 
 
 
 
 
-        </form>
+            </form>
+
+        </header>
+
+    </div>
 
 
-    </header>
+
 
 
     <!-- /*----------------------------Connexion BDD------------------------*/ -->
@@ -321,15 +331,19 @@ $conn = null;
                                         if ($difficulty === "Facile") {
                                             echo '<style> .difficulty {color:green;} </style>';
                                             echo $resultats['MDI_Nom'];
-                                        } ?>
+                                        }
 
-                                        <?php if ($difficulty === "Moyen") {
+                                        if ($difficulty === "Moyen") {
                                             echo '<style> .difficulty {color:brown;} </style>';
                                             echo $resultats['MDI_Nom'];
-                                        } ?>
+                                        }
 
-                                        <?php if ($difficulty === "Difficile") {
+                                        if ($difficulty === "Difficile") {
                                             echo '<style> .difficulty {color:brown;} </style>';
+                                            echo $resultats['MDI_Nom'];
+                                        }
+                                        if ($difficulty === "Argent réel") {
+                                            echo '<style> .difficulty {color:green;} </style>';
                                             echo $resultats['MDI_Nom'];
                                         }
                                     } else {
@@ -374,7 +388,7 @@ $conn = null;
             <?php
         }
 
-        echo "<p class=count> total results : $i</p>";
+        echo "<p class=count> Résultats : $i</p>";
     }
 
 
