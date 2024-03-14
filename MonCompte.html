@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Mon Compte</title>
     <style>
       body {
@@ -46,6 +47,28 @@
   </head>
 
   <body>
+    <header>
+      <nav id="menus">
+        <ul>
+          <li>
+            <a href="./wow-armory.html">
+              <img src="./Assets/logo.png" alt="World of warcraft" class="logo"
+            /></a>
+          </li>
+          <li><a href="./montures.html">Mounts </a></li>
+          <li><a href="./equipements.html">Equipments</a></li>
+          <li><a href="./map.html">Map</a></li>
+          <li><a href="./MonCompte.html">My account</a></li>
+            <input type="submit" name="submit" class="submit" value="Search" />
+          </li>
+          <li>
+            <a href="./login.html"
+              ><button class="login" type="button">Login</button></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
     <div class="container">
       <h2>Mon Compte</h2>
       <form action="traitement.php" method="post" enctype="multipart/form-data">
