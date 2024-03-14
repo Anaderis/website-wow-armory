@@ -201,7 +201,12 @@ input[type=submit] {
     font-size:large;
     color: rgb(255, 255, 255);
     border-radius: 6px;
+    /* padding : 2%; */
     /* margin-top:10%; */
+}
+
+.searchEquipment {
+  float:center;
 }
 
 /* -----------------------------Fiche article monture---------------------------- */
@@ -209,8 +214,6 @@ input[type=submit] {
 /* Compteur de résultat */
 .count {
   font-size: 2em;
-  position:absolute;
-  top:0;
 }
 
 
@@ -277,7 +280,8 @@ input[type=submit] {
 }
 
 .textMount h3 {
-  padding-bottom:5%;
+  padding:2%;
+  
 }
 
 .criteriaMount {

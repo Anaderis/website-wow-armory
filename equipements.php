@@ -34,10 +34,9 @@
                         <a href="./wow-armory.php">
                             <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
                     </li>
-                    <li><a href="./bdd-mount.php">Mounts </a></li>
-                    <li><a href="./equipements.php">Equipments</a></li>
-                    <li><a href="./map.html">Map</a></li>
-                    <li><a href="./MonCompte.html">My account</a></li>
+                    <li><a href="./bdd-mount.php">Montures </a></li>
+                    <li><a href="./equipements.php">Equipements</a></li>
+                    <li><a href="./MonCompte.html">Mon compte</a></li>
                     <li>
                         <input type="text" name="text" class="search" placeholder="Recherche" />
                     </li>
@@ -62,6 +61,7 @@
                 <!-- Type -->
 
                 <div class="filter">
+
                     <label for="type">Type : </label>
                     <select name="type">
                         <option value="">Type</option>
@@ -71,10 +71,7 @@
                         <option value="Mailles">Mailles</option>
                         <option value="Arme">Arme</option>
                     </select>
-                </div>
 
-
-                <div class="filter">
                     <label for="emplacement">Emplacement : </label>
                     <select name="emplacement">
                         <option value="">Emplacement</option>
@@ -90,7 +87,7 @@
                     </select>
                 </div>
 
-                <div class="filter">
+                <div class="filter2">
                     <label for="region">Région : </label>
                     <select name="region">
                         <option value="">Région</option>
@@ -120,9 +117,7 @@
                         <option value="Féralas">Féralas</option>
 
                     </select>
-                </div>
 
-                <div class="filter">
                     <label for="source">Moyen d'obtention : </label>
                     <select name="source">
                         <option value="">Moyen d'obtention</option>
@@ -146,14 +141,16 @@
                         <option value="Vendeur">Vendeur</option>
                     </select>
 
+
+
+                </div>
+                <div class="searchEquipment">
+                    <input type="submit" value="Rechercher" name="submit">
                 </div>
 
-                <div>
-
-                    <input type="submit" value="Search" name="submit">
-                </div>
 
     </div>
+
 
 
 
@@ -317,9 +314,10 @@
 
                 <?php
             }
+            echo "<p class=count> Résultats : $i</p>";
 
         }
-        echo "<p class=count> Total results : $i</p>";
+
     }
 
     /*On capture les exceptions si une exception est lancée et on affiche
