@@ -1,75 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mon Compte</title>
     <style>
-        /* Styles CSS pour mise en forme */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        img {
-            max-width: 150px;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      img {
+        max-width: 150px;
+        height: auto;
+        display: block;
+        margin-bottom: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="container">
-        <h2>Mon Compte</h2>
-        <?php
-            // Récupération du pseudo de l'utilisateur (simulé)
-            $pseudo = "Utilisateur";
+      <h2>Mon Compte</h2>
+      <form action="traitement.php" method="post" enctype="multipart/form-data">
+        <!-- Champ pour le pseudo -->
+        <label for="pseudo">Modifier le pseudo :</label>
+        <input
+          type="text"
+          id="pseudo"
+          name="pseudo"
+          placeholder="Nouveau pseudo"
+        />
 
-            // Affichage du pseudo
-            echo "<p>Pseudo actuel : <strong>$pseudo</strong></p>";
-        ?>
-        <form action="traitement.php" method="post" enctype="multipart/form-data">
-            <!-- Champ pour le pseudo -->
-            <label for="pseudo">Modifier le pseudo :</label>
-            <input type="text" id="pseudo" name="pseudo" placeholder="Nouveau pseudo">
+        <!-- Champ pour l'image de profil -->
+        <label for="profil_pic">Changer la photo de profil :</label>
+        <input type="file" id="profil_pic" name="profil_pic" />
 
-            <!-- Champ pour l'image de profil -->
-            <label for="profil_pic">Changer la photo de profil :</label>
-            <input type="file" id="profil_pic" name="profil_pic">
+        <!-- Champ caché pour l'ancien pseudo -->
+        <input type="hidden" name="old_pseudo" value="<?php echo $pseudo; ?>" />
 
-            <!-- Champ caché pour l'ancien pseudo -->
-            <input type="hidden" name="old_pseudo" value="<?php echo $pseudo; ?>">
-
-            <!-- Bouton de soumission -->
-            <input type="submit" value="Enregistrer les modifications">
-        </form>
+        <!-- Bouton de soumission -->
+        <input type="submit" value="Enregistrer les modifications" />
+      </form>
     </div>
-</body>
+  </body>
 </html>
