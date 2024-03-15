@@ -76,7 +76,7 @@ $conn = null;
                     </li>
                     <li><a href="./bdd-mount.php">Montures </a></li>
                     <li><a href="./equipements.php">Equipements</a></li>
-                    <li><a href="./MonCompte.html">Mon compte</a></li>
+                    <li><a href="./MonCompte.php">Mon compte</a></li>
                     <!-- <li>
                     <input type="submit" name="submit" class="submit" value="Search" />
                 </li> -->
@@ -208,7 +208,7 @@ $conn = null;
 
 
 
-    if (isset($_POST["submit"])) {
+    if (isset ($_POST["submit"])) {
 
 
 
@@ -241,27 +241,27 @@ $conn = null;
         // Godefroy
         // Step 2
         // On passe le boolean à True pour chaque critère utilisé.
-        if (!empty($_POST['difficulty'])) // si une region à été choisie
+        if (!empty ($_POST['difficulty'])) // si une region à été choisie
         {
             $where[] = ' MDI_Nom = ' . ':difficulty';
             $haveDifficulty = true;
         }
-        if (!empty($_POST['source'])) // si une region à été choisie
+        if (!empty ($_POST['source'])) // si une region à été choisie
         {
             $where[] = ' MO_Nom = ' . ':source';
             $haveSource = true;
         }
-        if (!empty($_POST['extension'])) // si une region à été choisie
+        if (!empty ($_POST['extension'])) // si une region à été choisie
         {
             $where[] = ' ME_Nom = ' . ':extension';
             $haveExtension = true;
         }
-        if (!empty($_POST['faction'])) // si une region à été choisie
+        if (!empty ($_POST['faction'])) // si une region à été choisie
         {
             $where[] = ' MFA_Nom = ' . ':faction';
             $haveFaction = true;
         }
-        if (!empty($_POST['type'])) // si une region à été choisie
+        if (!empty ($_POST['type'])) // si une region à été choisie
         {
             $where[] = ' MTY_Nom = ' . ':type';
             $haveType = true;
@@ -270,7 +270,7 @@ $conn = null;
 
 
 
-        if (isset($where)) {
+        if (isset ($where)) {
             $sqlQuery .= " WHERE " . implode(' AND ', $where);
         }
 
@@ -324,7 +324,7 @@ $conn = null;
 
                                     <img src="./Assets/mounts/picto/star.png" class="picto">
 
-                                    <?php if (!empty($_POST['difficulty'])) {
+                                    <?php if (!empty ($_POST['difficulty'])) {
                                         if ($difficulty === "Facile") {
                                             echo '<style> .difficulty {color:green;} </style>';
                                             echo $resultats['MDI_Nom'];
@@ -364,6 +364,7 @@ $conn = null;
                                 </div>
 
                             </div>
+                            <button class="read" type="button">Ajouter à mon inventaire</button>
 
 
                         </div>
@@ -372,8 +373,8 @@ $conn = null;
                 </article>
             </div>
             </section>
-            
-        
+
+
 
 
 

@@ -33,7 +33,7 @@
                     </li>
                     <li><a href="./bdd-mount.php">Montures </a></li>
                     <li><a href="./equipements.php">Equipements</a></li>
-                    <li><a href="./MonCompte.html">Mon compte</a></li>
+                    <li><a href="./MonCompte.php">Mon compte</a></li>
                     <li>
                         <input type="text" name="text" class="search" placeholder="Recherche" />
                     </li>
@@ -186,7 +186,7 @@
 
 
 
-        if (isset($_POST["submit"])) {
+        if (isset ($_POST["submit"])) {
 
 
 
@@ -215,22 +215,22 @@
             // Godefroy
             // Step 2
             // On passe le boolean à True pour chaque critère utilisé.
-            if (!empty($_POST['region'])) // si une region à été choisie
+            if (!empty ($_POST['region'])) // si une region à été choisie
             {
                 $where[] = ' ER_Nom = ' . ':region';
                 $haveRegion = true;
             }
-            if (!empty($_POST['source'])) // si une region à été choisie
+            if (!empty ($_POST['source'])) // si une region à été choisie
             {
                 $where[] = ' MO_Nom = ' . ':source';
                 $haveSource = true;
             }
-            if (!empty($_POST['emplacement'])) // si une region à été choisie
+            if (!empty ($_POST['emplacement'])) // si une region à été choisie
             {
                 $where[] = ' EE_Nom = ' . ':emplacement';
                 $haveEmplacement = true;
             }
-            if (!empty($_POST['type'])) // si une region à été choisie
+            if (!empty ($_POST['type'])) // si une region à été choisie
             {
                 $where[] = ' ETY_Nom = ' . ':type';
                 $haveType = true;
@@ -239,7 +239,7 @@
 
 
 
-            if (isset($where)) {
+            if (isset ($where)) {
                 $sqlQuery .= " WHERE " . implode(' AND ', $where);
             }
 
@@ -301,13 +301,18 @@
 
                                 </div>
 
+                                <button class="read" type="button">Ajouter à mon inventaire</button>
+
+
                             </div>
 
                             <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
                                 alt="Assets/mounts/default.jpg" />
 
                         </div>
+
                     </article>
+
                 </div>
                 </section>
 
