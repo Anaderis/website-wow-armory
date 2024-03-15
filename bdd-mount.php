@@ -308,10 +308,7 @@ $conn = null;
 
         foreach ($resultat as $resultats) {
             $i++;
-
             ?>
-
-
             <div class="actu">
                 <article class="article">
                     <div class="articleMount">
@@ -375,13 +372,10 @@ $conn = null;
                 </article>
             </div>
             </section>
-            </div>
+            
+        
 
 
-
-            </div>
-
-            </div>
 
 
 

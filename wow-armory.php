@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 if(isset($_SESSION["Loggedin"])){
@@ -31,9 +31,13 @@ if(isset($_SESSION["Loggedin"])){
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
+
 <div class="imgHeader">
     <header>
         <nav id="menus">
@@ -79,8 +83,10 @@ if(isset($_SESSION["Loggedin"])){
                             Découvrez le comptoir !
                         </h3>
                         <p>
-                            Le comptoir est une nouvelle fonctionnalité du patch 10.0.5 de Dragonglight. En réalisant
-                            des activités mensuelles dans le jeu, il est possible de récupérer des deniers, qui peuvent
+                            Le comptoir est une nouvelle fonctionnalité du patch 10.0.5 de Dragonglight. En
+                            réalisant
+                            des activités mensuelles dans le jeu, il est possible de récupérer des deniers, qui
+                            peuvent
                             être utilisés pour obtenir des récompenses cosmétiques du comptoir.
                         </p>
                         <button class="read" type="button">Lire la suite</button>
@@ -93,8 +99,10 @@ if(isset($_SESSION["Loggedin"])){
                     <div class="articleText">
                         <h3>Une nouvelle monture au Rêve d'émeraude</h3>
                         <p>
-                            La monture Rênes du cerf onirique ravivé est vendue auprès du PnJ Talisa Murmurante (49.80,
-                            62.20) au Campement central du Rêve d'émeraude. Cette monture peut être échangée contre 1
+                            La monture Rênes du cerf onirique ravivé est vendue auprès du PnJ Talisa Murmurante
+                            (49.80,
+                            62.20) au Campement central du Rêve d'émeraude. Cette monture peut être échangée contre
+                            1
                             Fleur de graine. [...]
                         </p>
                         <button class="read" type="button">Lire la suite</button>
@@ -108,7 +116,8 @@ if(isset($_SESSION["Loggedin"])){
                         <h3>Changements à venir pour les donjons de la saison 4 de Dragonflight</h3>
                         <p>
                             La saison 4 de Dragonflight apporte toute une gamme de changements, notamment des
-                            ajustements concernant les donjons, leur progression et leurs récompenses (et de nouvelles
+                            ajustements concernant les donjons, leur progression et leurs récompenses (et de
+                            nouvelles
                             montures !)
                         </p>
                         <button class="read" type="button">Lire la suite</button>
