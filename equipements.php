@@ -46,15 +46,21 @@ include "auth-mount-equip.php";
                     <li><a href="./bdd-mount.php">Montures </a></li>
                     <li><a href="./equipements.php">Equipements</a></li>
                     <li>
-                        <?php
-                        if (isset ($_SESSION['Loggedin'])) {
+                    <?php 
+                        if(isset($_SESSION['Loggedin'])){
                             echo '<a href="./MonCompte.php">Mon compte</a>';
-                        } else {
+                        }else{
                             echo '<a href="./login.php">Mon compte</button></a>';
                         }
+                    ?>
+                </li>
+                    <li>
+                    <?php
+                        if(isset($_SESSION['Loggedin'])){
+                            echo '<a href="./PHP/Login/logout.php">logout</a>';
+                        }else{}
                         ?>
                     </li>
-                    <li><a href="./PHP/Login/logout.php">Déconnexion</a></li>
                     <li>
                         <?php
                         if (isset ($_SESSION['Loggedin'])) {
