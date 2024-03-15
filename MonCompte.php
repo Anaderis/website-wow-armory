@@ -2,7 +2,7 @@
 session_start();
 
 
-if(isset($_SESSION["Loggedin"])) {
+if (isset ($_SESSION["Loggedin"])) {
     require_once "./PHP/Login/DB_Conn.php";
 
     $user = $_SESSION["Loggedin"];
@@ -15,6 +15,7 @@ if(isset($_SESSION["Loggedin"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +24,9 @@ if(isset($_SESSION["Loggedin"])) {
     <title>Mon Compte</title>
 
     <!-- Footer -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    
+
     <!-- Police -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +37,7 @@ if(isset($_SESSION["Loggedin"])) {
 
 
 </head>
+
 <body>
     <header>
         <nav>
@@ -46,7 +48,7 @@ if(isset($_SESSION["Loggedin"])) {
     </header>
     <main>
         <div class="loginhtml">
-            
+
 
         </div>
         <div class="profilConteneur">
@@ -54,19 +56,22 @@ if(isset($_SESSION["Loggedin"])) {
                 <div class="profilform ombre">
                     <div class="profilholder">
                         <img class="photo" src=<?php echo $_SESSION['Photo'] ?> alt="user" />
-                        <h1><?php echo $user ?></h1>
+                        <h1>
+                            <?php echo $user ?>
+                        </h1>
                     </div>
                 </div>
-                    <h1>
-                        <?php 
-                            if(isset($_SESSION[''])) {
-                                header('login.php');
-                            }
-                        ?>
-                    </h1>
-                
+                <h1>
+                    <?php
+                    if (isset ($_SESSION[''])) {
+                        header('login.php');
+                    }
+                    ?>
+                </h1>
+
             </div>
         </div>
-    </main> 
+    </main>
 </body>
+
 </html>

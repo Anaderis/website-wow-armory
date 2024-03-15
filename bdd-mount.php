@@ -1,26 +1,13 @@
 <?php
-$servername = 'localhost';
-$username = 'root';
-$password = '';
+session_start();
 
-
-
-//On essaie de se connecter
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=wow armory", $username, $password);
-    //On définit le mode d'erreur de PDO sur Exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $dbco = $conn;
+if (isset ($_SESSION["Loggedin"])) {
+    $username = $_SESSION['Loggedin'];
+} else {
+    session_destroy();
 }
 
-/*On capture les exceptions si une exception est lancée et on affiche
- *les informations relatives à celle-ci*/ catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
-}
-
-/* On ferme la connexion */
-$conn = null;
+include "auth-mount-equip.php";
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +53,6 @@ $conn = null;
 
         <header>
 
-
-
             <nav id="menus">
                 <ul>
                     <li>
@@ -76,17 +61,28 @@ $conn = null;
                     </li>
                     <li><a href="./bdd-mount.php">Montures </a></li>
                     <li><a href="./equipements.php">Equipements</a></li>
-                    <li><a href="./MonCompte.php">Mon compte</a></li>
-                    <!-- <li>
-                    <input type="submit" name="submit" class="submit" value="Search" />
-                </li> -->
                     <li>
-                        <a href="./login.php"><button class="login" type="button">Login</button></a>
+                        <?php
+                        if (isset ($_SESSION['Loggedin'])) {
+                            echo '<a href="./MonCompte.php">Mon compte</a>';
+                        } else {
+                            echo '<a href="./login.php">Mon compte</button></a>';
+                        }
+                        ?>
+                    </li>
+                    <li><a href="./PHP/Login/logout.php">Déconnexion</a></li>
+                    <li>
+                        <?php
+                        if (isset ($_SESSION['Loggedin'])) {
+                            echo '<a href="./moncompte.php"><button class="login" type="button">' . $username . '</button></a>';
+                        } else {
+                            echo '<a href="./login.php"><button class="login" type="button">Login</button></a>';
+                        }
+                        ?>
                     </li>
                 </ul>
 
             </nav>
-
 
 
 
