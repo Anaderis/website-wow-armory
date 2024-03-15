@@ -23,7 +23,7 @@ body {
   background-image: url(../Assets/header-mounts.jpg);
   background-size: cover;
   background-position: top;
-  height:800px;
+  height:auto;
   width:100%;
 }
 
@@ -31,7 +31,7 @@ body {
   background-image: url(../Assets/header-equipement.jpg);
   background-size: cover;
   background-position: top;
-  height:800px;
+  height:auto;
   width:100%;
 }
 
@@ -171,6 +171,7 @@ border-radius: 6px;
 .filter2 {
     display:flex;
     flex-direction: column;
+    flex-wrap:wrap;
     align-items:center;
     padding: 2%;
 }
@@ -182,6 +183,7 @@ border-radius: 6px;
     opacity: 0.8;
     margin:5%;
     padding:5%;
+    flex-wrap: wrap;
     /* color:white; */
 }
 
@@ -233,6 +235,8 @@ input[type=submit] {
 .article div {
     
     margin-bottom:10px;
+    flex-wrap: wrap;
+
     /* padding:1%; */
 
     
@@ -241,9 +245,11 @@ input[type=submit] {
 /* format de l'image */
 
 .photoMount {
-    width:15%;
-    height:5%;
+    max-width:15%;
+    height:auto;
     margin-left:10px;
+    flex-wrap: wrap;
+
 }
 
 
@@ -266,6 +272,8 @@ input[type=submit] {
 .difficulty {
   display:flex;
   align-items: center;
+  flex-wrap: wrap;
+
 }
 .picto {
   width:30px;
@@ -288,6 +296,8 @@ input[type=submit] {
   display:flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
+
   /* flex-wrap: wrap; */
   
 }
