@@ -274,54 +274,43 @@
             foreach ($resultat as $resultats) {
                 $i++;
                 ?>
-                <section>
-                    <div class="actu">
-                        <article class="article">
-                            <div class="articleMount">
-                                <div class="textMount">
-                                    <h3>
-                                        <?php echo $resultats['E_Nom'] ?>
-                                    </h3>
+                <div class="actu">
+                    <article class="article">
+                        <div class="articleMount">
+                            <div class="textMount">
+                                <h3>
+                                    <?php echo $resultats['E_Nom'] ?>
+                                </h3>
 
-                                    <p>
+                                <div class="criteriaMount">
+
+
+                                    <div class="mountDetail">
                                         <?php echo $resultats['ETY_Nom'] ?>
+                                    </div>
+                                    <div class="mountDetail">
                                         <?php echo $resultats['EE_Nom'] ?>
+                                    </div>
+                                    <div class="mountDetail">
                                         <?php echo $resultats['ER_Nom'] ?>
+                                    </div>
+                                    <div class="mountDetail">
                                         <?php echo $resultats['MO_Nom'] ?>
-
-                                    </p>
-                                    <button class="read" type="button">Lire la suite</button>
-                                </div>
-
-                                <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount" />
-
-                                    <div class="criteriaMount">
-                                        <div class="mountDetail">
-                                            <?php echo $resultats['ETY_Nom'] ?>
-                                        </div>
-                                        <div class="mountDetail">
-                                            <?php echo $resultats['EE_Nom'] ?>
-                                        </div>
-                                        <div class="mountDetail">
-                                            <?php echo $resultats['ER_Nom'] ?>
-                                        </div>
-                                        <div class="mountDetail">
-                                            <?php echo $resultats['MO_Nom'] ?>
-                                        </div>
-
-
                                     </div>
 
+
                                 </div>
 
-                                <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
-                                    alt="Assets/mounts/default.jpg" />
-
                             </div>
-                    </div>
+
+                            <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
+                                alt="Assets/mounts/default.jpg" />
+
+                        </div>
                     </article>
-                    </div>
+                </div>
                 </section>
+
 
                 <?php
             }
