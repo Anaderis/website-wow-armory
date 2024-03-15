@@ -57,7 +57,14 @@ if(isset($_SESSION["Loggedin"])){
                         }
                     ?>
                 </li>
-                <li><a href="./PHP/Login/logout.php">logout</a></li>
+
+                <li>
+                    <?php
+                    if(isset($_SESSION['Loggedin'])){
+                        echo '<a href="./PHP/Login/logout.php">logout</a>';
+                    }else{}
+                    ?>
+                </li>
                 <li>
                     
                     <?php 
