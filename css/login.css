@@ -58,7 +58,7 @@ img:hover{
 
 .loginhtml{
     display: grid;
-    grid-template-columns: 1fr 0.5fr 0.25fr 1fr 1fr 0.25fr 0.5fr 1fr;
+    grid-template-columns: 0.75fr 0.5fr 0.25fr 0.75fr 0.75fr 0.25fr 0.5fr 0.75fr;
     grid-template-rows: 35px 450px;
     gap: 6px;
 }
@@ -161,8 +161,8 @@ input .register{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 4%;
-    margin-bottom: 2%;
+    gap: 10%;
+    margin-bottom: 5%;
 }
 
 .divloginholder{

@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+if(isset($_SESSION["User"])){
+    $username = $_SESSION['User'];
+}
+?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -24,26 +34,29 @@
 <body>
 <div class="imgHeader">
     <header>
-    <nav id="menus">
+        <nav id="menus">
             <ul>
                 <li>
                     <a href="./wow-armory.php">
-                        <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
+                    <img src="./Assets/logo.png" alt="World of warcraft" class="logo" /></a>
                 </li>
                 <li><a href="./bdd-mount.php">Montures </a></li>
                 <li><a href="./equipements.php">Equipements</a></li>
-                <li><a href="./MonCompte.html">Mon compte</a></li>
-
-
-
+                <li><a href="./MonCompte.php">Mon compte</a></li>
                 <li>
-                    <a href="./login.php"><button class="login" type="button">Login</button></a>
+                    
+                    <?php 
+                       if(isset($_SESSION['User'])){
+                           echo '<a href="./moncompte.php"><button class="login" type="button">' . $username . '</button></a>';
+                       } else {
+                           echo '<a href="./login.php"><button class="login" type="button">Login</button></a>';
+                       }
+                    ?>
+                       
+
                 </li>
             </ul>
-
         </nav>
-
-        
     </header>
     </div>
     <section>
