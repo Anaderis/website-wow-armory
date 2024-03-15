@@ -13,11 +13,26 @@
 
 
 body {
-    /* background-color: #eaeded ; */
-    background-color: red;
+    background-color: #eaeded ;
     margin:0px;
     font-size:medium;
     font-family: 'acherus_grotesque_regularRg','calibri','serif';
+}
+
+.imgHeaderMount {
+  background-image: url(../Assets/header-mounts.jpg);
+  background-size: cover;
+  background-position: top;
+  height:800px;
+  width:100%;
+}
+
+.imgHeaderEquipment {
+  background-image: url(../Assets/header-equipement.jpg);
+  background-size: cover;
+  background-position: top;
+  height:800px;
+  width:100%;
 }
 
 
@@ -75,7 +90,7 @@ header {
 
 nav{
     width:100%;
-    height:25%;
+    height:50%;
     border-radius: 10px; 
     margin:auto;
     /* position:fixed; */
@@ -186,7 +201,12 @@ input[type=submit] {
     font-size:large;
     color: rgb(255, 255, 255);
     border-radius: 6px;
-    margin-top:20%;
+    /* padding : 2%; */
+    /* margin-top:10%; */
+}
+
+.searchEquipment {
+  float:center;
 }
 
 /* -----------------------------Fiche article monture---------------------------- */
@@ -194,7 +214,6 @@ input[type=submit] {
 /* Compteur de résultat */
 .count {
   font-size: 2em;
-  float:left;
 }
 
 
@@ -251,6 +270,7 @@ input[type=submit] {
 .picto {
   width:30px;
   padding-right: 10px;
+  
 } 
 
 /* proportion du texte dans la div */
@@ -260,7 +280,8 @@ input[type=submit] {
 }
 
 .textMount h3 {
-  padding-bottom:5%;
+  padding:2%;
+  
 }
 
 .criteriaMount {
