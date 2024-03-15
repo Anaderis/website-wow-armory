@@ -1,26 +1,13 @@
 <?php
-$servername = 'localhost';
-$username = 'root';
-$password = '';
+session_start();
 
-
-
-//On essaie de se connecter
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=wow armory", $username, $password);
-    //On définit le mode d'erreur de PDO sur Exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $dbco = $conn;
+if (isset ($_SESSION["Loggedin"])) {
+    $username = $_SESSION['Loggedin'];
+} else {
+    session_destroy();
 }
 
-/*On capture les exceptions si une exception est lancée et on affiche
- *les informations relatives à celle-ci*/ catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
-}
-
-/* On ferme la connexion */
-$conn = null;
+include "auth-mount-equip.php";
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +53,6 @@ $conn = null;
 
         <header>
 
-
-
             <nav id="menus">
                 <ul>
                     <li>
@@ -92,12 +77,17 @@ $conn = null;
                         ?>
                     </li>
                     <li>
-                        <a href="./login.php"><button class="login" type="button">Login</button></a>
+                        <?php
+                        if (isset ($_SESSION['Loggedin'])) {
+                            echo '<a href="./moncompte.php"><button class="login" type="button">' . $username . '</button></a>';
+                        } else {
+                            echo '<a href="./login.php"><button class="login" type="button">Login</button></a>';
+                        }
+                        ?>
                     </li>
                 </ul>
 
             </nav>
-
 
 
 
@@ -219,7 +209,7 @@ $conn = null;
 
 
 
-    if (isset($_POST["submit"])) {
+    if (isset ($_POST["submit"])) {
 
 
 
@@ -252,27 +242,27 @@ $conn = null;
         // Godefroy
         // Step 2
         // On passe le boolean à True pour chaque critère utilisé.
-        if (!empty($_POST['difficulty'])) // si une region à été choisie
+        if (!empty ($_POST['difficulty'])) // si une region à été choisie
         {
             $where[] = ' MDI_Nom = ' . ':difficulty';
             $haveDifficulty = true;
         }
-        if (!empty($_POST['source'])) // si une region à été choisie
+        if (!empty ($_POST['source'])) // si une region à été choisie
         {
             $where[] = ' MO_Nom = ' . ':source';
             $haveSource = true;
         }
-        if (!empty($_POST['extension'])) // si une region à été choisie
+        if (!empty ($_POST['extension'])) // si une region à été choisie
         {
             $where[] = ' ME_Nom = ' . ':extension';
             $haveExtension = true;
         }
-        if (!empty($_POST['faction'])) // si une region à été choisie
+        if (!empty ($_POST['faction'])) // si une region à été choisie
         {
             $where[] = ' MFA_Nom = ' . ':faction';
             $haveFaction = true;
         }
-        if (!empty($_POST['type'])) // si une region à été choisie
+        if (!empty ($_POST['type'])) // si une region à été choisie
         {
             $where[] = ' MTY_Nom = ' . ':type';
             $haveType = true;
@@ -281,7 +271,7 @@ $conn = null;
 
 
 
-        if (isset($where)) {
+        if (isset ($where)) {
             $sqlQuery .= " WHERE " . implode(' AND ', $where);
         }
 
@@ -335,7 +325,7 @@ $conn = null;
 
                                     <img src="./Assets/mounts/picto/star.png" class="picto">
 
-                                    <?php if (!empty($_POST['difficulty'])) {
+                                    <?php if (!empty ($_POST['difficulty'])) {
                                         if ($difficulty === "Facile") {
                                             echo '<style> .difficulty {color:green;} </style>';
                                             echo $resultats['MDI_Nom'];
@@ -375,6 +365,7 @@ $conn = null;
                                 </div>
 
                             </div>
+                            <button class="read" type="button">Ajouter à mon inventaire</button>
 
 
                         </div>
@@ -383,8 +374,8 @@ $conn = null;
                 </article>
             </div>
             </section>
-            
-        
+
+
 
 
 
