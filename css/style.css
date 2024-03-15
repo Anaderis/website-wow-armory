@@ -139,6 +139,11 @@ border-radius: 6px;
 
 /* article */
 
+/* .responsive {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
 article {
     width:60%;
     margin-left:5%;
@@ -152,15 +157,17 @@ article div {
 }
 
 .invincible {
-    min-width:40%;
-    margin-left:10px;
+    max-width:40%;
+    margin-left:1em;
 }
 .article1 {
     display:flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 .article, img{
     flex:1;
+    max-width:80%;
     
 }
 
@@ -180,6 +187,7 @@ article div {
 .actu{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 aside {
     text-align: center;
@@ -187,7 +195,10 @@ aside {
     width:30%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     margin-right: 1%;
+    padding-top:1%;
+
 }
 .aside1{
     padding: 4%;
