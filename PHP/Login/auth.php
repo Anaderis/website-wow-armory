@@ -16,6 +16,7 @@ if(isset($_POST["submit"])){
 
     $Userlogin = $_POST["User"];
     $passwordlogin = $_POST["password"];
+    
 
     $errors = array();
 
@@ -51,16 +52,15 @@ if(isset($_POST["submit"])){
                 WHERE J_User = '$Userlogin' AND J_MDP='$passwordlogin'";
 
         $result = mysqli_query($conn, $sql);
-
         if(mysqli_num_rows($result) === 1){
 
-            $row = mysqli_fetch_assoc($result);
-
+            $row = mysqli_fetch_assoc($result); 
             if($row['J_User']===$Userlogin && $row['J_MDP'] === $passwordlogin){
 
+                $_SESSION['Photo'] = $row['J_photo'];
                 $_SESSION['User'] = $row['J_User'];
-                $_SESSION['J_Id'] = $row['J_Id'];
-
+                $_SESSION['Id'] = $row['J_Id'];
+                $_SESSION['Loggedin'] = $_SESSION['User'];
                 header("Location: ./wow-armory.php");
 
                 exit();
