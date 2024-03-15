@@ -3,8 +3,6 @@ session_start();
 
 
 if(isset($_SESSION["Loggedin"])) {
-    require_once "./PHP/Login/DB_Conn.php";
-
     $user = $_SESSION["Loggedin"];
 }
 ?>
@@ -23,16 +21,9 @@ if(isset($_SESSION["Loggedin"])) {
     <title>Mon Compte</title>
 
     <!-- Footer -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    
-    <!-- Police -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
-
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
 
 
 </head>
@@ -45,10 +36,6 @@ if(isset($_SESSION["Loggedin"])) {
         </nav>
     </header>
     <main>
-        <div class="loginhtml">
-            
-
-        </div>
         <div class="profilConteneur">
             <div class="profilhtml">
                 <div class="profilform ombre">
@@ -57,14 +44,22 @@ if(isset($_SESSION["Loggedin"])) {
                         <h1><?php echo $user ?></h1>
                     </div>
                 </div>
-                    <h1>
-                        <?php 
-                            if(isset($_SESSION[''])) {
-                                header('login.php');
-                            }
+                <div class="Monture-conteneur ombre">
+                    <h1>Monture</h1>
+                    <div class="text">
+                        <?php
+                            require_once "./PHP/MonCompte/conn-monture.php";
                         ?>
-                    </h1>
-                
+                    </div>
+                </div>
+                <div class="Equipement-conteneur ombre">
+                    <h1>Equipement</h1>
+                    <div class="text">
+                        <?php
+                            require_once "./PHP/MonCompte/conn-equipement.php";
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </main> 

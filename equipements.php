@@ -33,13 +33,22 @@
                     </li>
                     <li><a href="./bdd-mount.php">Montures </a></li>
                     <li><a href="./equipements.php">Equipements</a></li>
-                    <li><a href="./MonCompte.html">Mon compte</a></li>
                     <li>
-                        <input type="text" name="text" class="search" placeholder="Recherche" />
+                    <?php 
+                        if(isset($_SESSION['Loggedin'])){
+                            echo '<a href="./MonCompte.php">Mon compte</a>';
+                        }else{
+                            echo '<a href="./login.php">Mon compte</button></a>';
+                        }
+                    ?>
+                </li>
+                    <li>
+                    <?php
+                        if(isset($_SESSION['Loggedin'])){
+                            echo '<a href="./PHP/Login/logout.php">logout</a>';
+                        }else{}
+                        ?>
                     </li>
-                    <!-- <li>
-                    <input type="submit" name="submit" class="submit" value="Search" />
-                </li> -->
                     <li>
                         <a href="./login.php"><button class="login" type="button">Login</button></a>
                     </li>
