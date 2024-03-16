@@ -5,6 +5,14 @@ if(isset($_SESSION["Loggedin"])){
 }else{
     session_destroy();
 }
+
+if (isset ($_SESSION["Loggedin"])) {
+    $username = $_SESSION['Loggedin'];
+} else {
+    session_destroy();
+}
+
+include "auth-mount-equip.php";
 ?>
 
 <!DOCTYPE html>
@@ -192,168 +200,145 @@ if(isset($_SESSION["Loggedin"])){
 
 
     <?php
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
 
-
-
-    //On essaie de se connecter
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=wow armory", $username, $password);
-        //On définit le mode d'erreur de PDO sur Exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $dbco = $conn;
-
-
-        //On récupère les infos de la table 
-    
+    if (isset ($_POST["submit"])) {
 
 
 
 
-        if (isset($_POST["submit"])) {
+        // Godefroy
+        // Step 1
+        // Pour chaque paramètre, on peut créé un boolean correspondant
+        $type = $_POST["type"];
+        $haveType = false;
+        $emplacement = $_POST["emplacement"];
+        $haveEmplacement = false;
+        $region = $_POST["region"];
+        $haveRegion = false;
+        $source = $_POST["source"];
+        $haveSource = false;
+        $i = 0;
 
 
-
-
-            // Godefroy
-            // Step 1
-            // Pour chaque paramètre, on peut créé un boolean correspondant
-            $type = $_POST["type"];
-            $haveType = false;
-            $emplacement = $_POST["emplacement"];
-            $haveEmplacement = false;
-            $region = $_POST["region"];
-            $haveRegion = false;
-            $source = $_POST["source"];
-            $haveSource = false;
-            $i = 0;
-
-
-            $sqlQuery = 'SELECT * FROM t_equipement 
+        $sqlQuery = 'SELECT * FROM t_equipement 
             INNER JOIN t_moyen_obtention_mo on t_moyen_obtention_mo.MO_Id=t_equipement.MO_id 
             INNER JOIN t_e_region_er_ on t_e_region_er_.ER_Id=t_equipement.ER_Id 
             INNER JOIN t_e_emplacement_ee on t_e_emplacement_ee.EE_Id=t_equipement.EE_Id 
             INNER JOIN t_e_type_ety on t_e_type_ety.ETY_Id=t_equipement.ETY_Id';
 
 
-            // Godefroy
-            // Step 2
-            // On passe le boolean à True pour chaque critère utilisé.
-            if (!empty($_POST['region'])) // si une region à été choisie
-            {
-                $where[] = ' ER_Nom = ' . ':region';
-                $haveRegion = true;
-            }
-            if (!empty($_POST['source'])) // si une region à été choisie
-            {
-                $where[] = ' MO_Nom = ' . ':source';
-                $haveSource = true;
-            }
-            if (!empty($_POST['emplacement'])) // si une region à été choisie
-            {
-                $where[] = ' EE_Nom = ' . ':emplacement';
-                $haveEmplacement = true;
-            }
-            if (!empty($_POST['type'])) // si une region à été choisie
-            {
-                $where[] = ' ETY_Nom = ' . ':type';
-                $haveType = true;
-            }
+        // Godefroy
+        // Step 2
+        // On passe le boolean à True pour chaque critère utilisé.
+        if (!empty ($_POST['region'])) // si une region à été choisie
+        {
+            $where[] = ' ER_Nom = ' . ':region';
+            $haveRegion = true;
+        }
+        if (!empty ($_POST['source'])) // si une region à été choisie
+        {
+            $where[] = ' MO_Nom = ' . ':source';
+            $haveSource = true;
+        }
+        if (!empty ($_POST['emplacement'])) // si une region à été choisie
+        {
+            $where[] = ' EE_Nom = ' . ':emplacement';
+            $haveEmplacement = true;
+        }
+        if (!empty ($_POST['type'])) // si une region à été choisie
+        {
+            $where[] = ' ETY_Nom = ' . ':type';
+            $haveType = true;
+        }
 
 
 
 
-            if (isset($where)) {
-                $sqlQuery .= " WHERE " . implode(' AND ', $where);
-            }
+        if (isset ($where)) {
+            $sqlQuery .= " WHERE " . implode(' AND ', $where);
+        }
 
 
 
-            // Godefroy
-            // Step 3
-            // Les IFs sont basiques, on peut les mettre chacun sur une ligne 
-            // pour que ça soit plus facile à comprendre/lire
-            $sth = $dbco->prepare($sqlQuery);
-            if ($haveRegion) {
-                $sth->bindParam(':region', $region, PDO::PARAM_STR);
-            }
-            if ($haveEmplacement) {
-                $sth->bindParam(':emplacement', $emplacement, PDO::PARAM_STR);
-            }
-            if ($haveSource) {
-                $sth->bindParam(':source', $source, PDO::PARAM_STR);
-            }
-            if ($haveType) {
-                $sth->bindParam(':type', $type, PDO::PARAM_STR);
-            }
+        // Godefroy
+        // Step 3
+        // Les IFs sont basiques, on peut les mettre chacun sur une ligne 
+        // pour que ça soit plus facile à comprendre/lire
+        $sth = $dbco->prepare($sqlQuery);
+        if ($haveRegion) {
+            $sth->bindParam(':region', $region, PDO::PARAM_STR);
+        }
+        if ($haveEmplacement) {
+            $sth->bindParam(':emplacement', $emplacement, PDO::PARAM_STR);
+        }
+        if ($haveSource) {
+            $sth->bindParam(':source', $source, PDO::PARAM_STR);
+        }
+        if ($haveType) {
+            $sth->bindParam(':type', $type, PDO::PARAM_STR);
+        }
 
-            $sth->execute();
+        $sth->execute();
 
-            //On affiche les infos de la table
-            $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
-            $keys = array_keys($resultat);
-            // for ($i = 0; $i < count($resultat); $i++) {
+        //On affiche les infos de la table
+        $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
+        $keys = array_keys($resultat);
+        // for ($i = 0; $i < count($resultat); $i++) {
     
 
-            foreach ($resultat as $resultats) {
-                $i++;
-                ?>
-                <div class="actu">
-                    <article class="article">
-                        <div class="articleMount">
-                            <div class="textMount">
-                                <h3>
-                                    <?php echo $resultats['E_Nom'] ?>
-                                </h3>
+        foreach ($resultat as $resultats) {
+            $i++;
+            ?>
+            <div class="actu">
+                <article class="article">
+                    <div class="articleMount">
+                        <div class="textMount">
+                            <h3>
+                                <?php echo $resultats['E_Nom'] ?>
+                            </h3>
 
-                                <div class="criteriaMount">
-
-
-                                    <div class="mountDetail">
-                                        <?php echo $resultats['ETY_Nom'] ?>
-                                    </div>
-                                    <div class="mountDetail">
-                                        <?php echo $resultats['EE_Nom'] ?>
-                                    </div>
-                                    <div class="mountDetail">
-                                        <?php echo $resultats['ER_Nom'] ?>
-                                    </div>
-                                    <div class="mountDetail">
-                                        <?php echo $resultats['MO_Nom'] ?>
-                                    </div>
+                            <div class="criteriaMount">
 
 
+                                <div class="mountDetail">
+                                    <?php echo $resultats['ETY_Nom'] ?>
                                 </div>
+                                <div class="mountDetail">
+                                    <?php echo $resultats['EE_Nom'] ?>
+                                </div>
+                                <div class="mountDetail">
+                                    <?php echo $resultats['ER_Nom'] ?>
+                                </div>
+                                <div class="mountDetail">
+                                    <?php echo $resultats['MO_Nom'] ?>
+                                </div>
+
 
                             </div>
 
                             <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
                                 alt="Assets/equipement/default.jpg" />
+                            <button class="read" type="button">Ajouter à mon inventaire</button>
+
 
                         </div>
-                    </article>
-                </div>
-                </section>
+
+                        <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
+                            alt="Assets/mounts/default.jpg" />
+
+                    </div>
+
+                </article>
+
+            </div>
+            </section>
 
 
-                <?php
-            }
-            echo "<p class=count> Résultats : $i</p>";
-
+            <?php
         }
+        echo "<p class=count> Résultats : $i</p>";
 
     }
-
-    /*On capture les exceptions si une exception est lancée et on affiche
-     *les informations relatives à celle-ci*/ catch (PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
-    }
-
-    /* On ferme la connexion */
-    $conn = null;
 
     ?>
 

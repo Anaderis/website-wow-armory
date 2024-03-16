@@ -218,6 +218,20 @@ input[type=submit] {
   font-size: 2em;
 }
 
+.read {
+  background: #303030;
+  color:white;
+  margin-left:1%;
+  transition:0.5s ease-in-out;
+
+  
+}
+
+.read:hover {
+  transition:0.5s ease-in-out;
+  background:#c37e1a;
+  padding:0.5%;
+}
 
 
 

@@ -13,6 +13,7 @@ if(isset($_SESSION["Loggedin"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +25,11 @@ if(isset($_SESSION["Loggedin"])) {
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+    
 
 
 </head>
+
 <body>
     <header>
         <nav>
@@ -41,7 +44,9 @@ if(isset($_SESSION["Loggedin"])) {
                 <div class="profilform ombre">
                     <div class="profilholder">
                         <img class="photo" src=<?php echo $_SESSION['Photo'] ?> alt="user" />
-                        <h1><?php echo $user ?></h1>
+                        <h1>
+                            <?php echo $user ?>
+                        </h1>
                     </div>
                 </div>
                 <div class="Monture-conteneur ombre">
@@ -62,6 +67,7 @@ if(isset($_SESSION["Loggedin"])) {
                 </div>
             </div>
         </div>
-    </main> 
+    </main>
 </body>
+
 </html>

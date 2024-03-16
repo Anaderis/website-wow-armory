@@ -4,15 +4,10 @@ $servername = 'localhost';
 $username = 'root';
 $password = '';
 
-
-
-//On essaie de se connecter
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=wow armory", $username, $password);
-    //On définit le mode d'erreur de PDO sur Exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $dbco = $conn;
+if (isset ($_SESSION["Loggedin"])) {
+    $username = $_SESSION['Loggedin'];
+} else {
+    session_destroy();
 }
 
 /*On capture les exceptions si une exception est lancée et on affiche
@@ -28,6 +23,7 @@ if(isset($_SESSION["Loggedin"])){
 }else{
     session_destroy();
 }
+include "auth-mount-equip.php";
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +69,6 @@ if(isset($_SESSION["Loggedin"])){
 
         <header>
 
-
-
             <nav id="menus">
                 <ul>
                     <li>
@@ -113,7 +107,6 @@ if(isset($_SESSION["Loggedin"])){
                 </ul>
 
             </nav>
-
 
 
 
@@ -235,7 +228,7 @@ if(isset($_SESSION["Loggedin"])){
 
 
 
-    if (isset($_POST["submit"])) {
+    if (isset ($_POST["submit"])) {
 
 
 
@@ -268,27 +261,27 @@ if(isset($_SESSION["Loggedin"])){
         // Godefroy
         // Step 2
         // On passe le boolean à True pour chaque critère utilisé.
-        if (!empty($_POST['difficulty'])) // si une region à été choisie
+        if (!empty ($_POST['difficulty'])) // si une region à été choisie
         {
             $where[] = ' MDI_Nom = ' . ':difficulty';
             $haveDifficulty = true;
         }
-        if (!empty($_POST['source'])) // si une region à été choisie
+        if (!empty ($_POST['source'])) // si une region à été choisie
         {
             $where[] = ' MO_Nom = ' . ':source';
             $haveSource = true;
         }
-        if (!empty($_POST['extension'])) // si une region à été choisie
+        if (!empty ($_POST['extension'])) // si une region à été choisie
         {
             $where[] = ' ME_Nom = ' . ':extension';
             $haveExtension = true;
         }
-        if (!empty($_POST['faction'])) // si une region à été choisie
+        if (!empty ($_POST['faction'])) // si une region à été choisie
         {
             $where[] = ' MFA_Nom = ' . ':faction';
             $haveFaction = true;
         }
-        if (!empty($_POST['type'])) // si une region à été choisie
+        if (!empty ($_POST['type'])) // si une region à été choisie
         {
             $where[] = ' MTY_Nom = ' . ':type';
             $haveType = true;
@@ -297,7 +290,7 @@ if(isset($_SESSION["Loggedin"])){
 
 
 
-        if (isset($where)) {
+        if (isset ($where)) {
             $sqlQuery .= " WHERE " . implode(' AND ', $where);
         }
 
@@ -351,7 +344,7 @@ if(isset($_SESSION["Loggedin"])){
 
                                     <img src="./Assets/mounts/picto/star.png" class="picto">
 
-                                    <?php if (!empty($_POST['difficulty'])) {
+                                    <?php if (!empty ($_POST['difficulty'])) {
                                         if ($difficulty === "Facile") {
                                             echo '<style> .difficulty {color:green;} </style>';
                                             echo $resultats['MDI_Nom'];
@@ -391,6 +384,7 @@ if(isset($_SESSION["Loggedin"])){
                                 </div>
 
                             </div>
+                            <button class="read" type="button">Ajouter à mon inventaire</button>
 
 
                         </div>
@@ -399,8 +393,8 @@ if(isset($_SESSION["Loggedin"])){
                 </article>
             </div>
             </section>
-            
-        
+
+
 
 
 
