@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION["Loggedin"])){
+    $username = $_SESSION['Loggedin'];
+}else{
+    session_destroy();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -50,8 +59,17 @@
                         ?>
                     </li>
                     <li>
-                        <a href="./login.php"><button class="login" type="button">Login</button></a>
-                    </li>
+                    
+                    <?php 
+                       if(isset($_SESSION['Loggedin'])){
+                           echo '<a href="./moncompte.php"><button class="login" type="button">' . $username . '</button></a>';
+                       } else {
+                           echo '<a href="./login.php"><button class="login" type="button">Login</button></a>';
+                       }
+                    ?>
+                       
+
+                </li>
                 </ul>
 
             </nav>
@@ -313,7 +331,7 @@
                             </div>
 
                             <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
-                                alt="Assets/mounts/default.jpg" />
+                                alt="Assets/equipement/default.jpg" />
 
                         </div>
                     </article>
