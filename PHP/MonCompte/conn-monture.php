@@ -18,9 +18,9 @@ foreach ($resultat as $resultats) {
                     <article class="article">
                         <div class="articleMount">
                             <div class="textMount">
-                                <h3>
+                                <h5>
                                     <?php echo $resultats['M_Nom'] ?>
-                                </h3>
+                                </h5>
                             </div>
                         </div>
                 </div>
