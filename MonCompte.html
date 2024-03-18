@@ -14,16 +14,7 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
-          ),
-          url("../Assets/backgroundlogin.avif");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
       }
-
       h1 {
         margin-top: 0;
         color: #fff;
@@ -52,17 +43,127 @@
           font-size: 24px;
         }
       }
+
+      .logo {
+        width: 30%;
+        height: 20%;
+      }
+
+      #menus {
+        background-color: rgb(255, 255, 255);
+        font-size: larger;
+        opacity: 0.7;
+      }
+
+      #menus ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        color: black;
+        flex-wrap: wrap;
+        padding: 1%;
+      }
+
+      #menus ul a {
+        color: black;
+        text-decoration: none;
+      }
+
+      nav {
+        width: auto;
+        height: 25%;
+        border-radius: 10px;
+      }
+
+      nav a {
+        --b: 0.1em;
+        --c: #000000;
+
+        color: #0000;
+        padding-block: var(--b);
+        background: linear-gradient(var(--c) 50%, #000 0) 0%
+            calc(100% - var(--_p, 0%)) / 100% 200%,
+          linear-gradient(var(--c) 0 0) 0% var(--_p, 0%) / var(--_p, 0%)
+            var(--b) no-repeat;
+        -webkit-background-clip: text, padding-box;
+        background-clip: text, padding-box;
+        transition: 0.3s var(--_s, 0s) linear,
+          background-size 0.2s calc(0.2s - var(--_s, 0s));
+      }
+
+      nav a:hover {
+        --_p: 100%;
+        --_s: 0.2s;
+      }
+
+      /* login */
+
+      .login:hover {
+        transition: 0.5s ease-in-out;
+        background: #303030;
+      }
+
+      .login:hover svg {
+        stroke-dashoffset: -480;
+      }
+
+      .login span {
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        font-weight: 100;
+      }
+
+      .login {
+        width: 80px;
+        height: 50px;
+        cursor: pointer;
+        background: black;
+        border: 1px solid #000000;
+        transition: 0.5s ease-in-out;
+        float: right;
+        font-size: large;
+        color: rgb(255, 255, 255);
+        border-radius: 6px;
+      }
     </style>
   </head>
   <body>
+    <header>
+      <nav id="menus">
+        <ul>
+          <li>
+            <a href="./wow-armory.php">
+              <img
+                src="./Assets/logo.png"
+                alt="World of warcraft"
+                class="logo"
+              />
+            </a>
+          </li>
+          <li><a href="./bdd-mount.php">Mounts </a></li>
+          <li><a href="./equipements.php">Equipments</a></li>
+          <li><a href="./map.html">Map</a></li>
+          <li><a href="./MonCompte.html">My account</a></li>
+          <li>
+            <input
+              type="text"
+              name="text"
+              class="search"
+              placeholder="Recherche"
+            />
+          </li>
+        </ul>
+      </nav>
+    </header>
     <h1>Mon Compte</h1>
     <p>Votre adresse e-mail : <span id="email"></span></p>
     <input type="file" accept="image/*" id="profilePicInput" />
     <button onclick="changeProfilePicture()">Changer la photo de profil</button>
     <script>
-      // Function pour update email address
+      // Function pour update l'adresse mail
       function updateEmail() {
-        // Replace 'your_email@example.com' with the actual email address
+        // remplacer 'your_email@example.com' avec l'email actuel
         document.getElementById("email").textContent = "your_email@example.com";
       }
 
@@ -75,7 +176,7 @@
         if (profilePicInput.files && profilePicInput.files[0]) {
           var reader = new FileReader();
           reader.onload = function (e) {
-            // Display the new profile picture (you can customize this part)
+            // Afficher la nouvelle photo de profil
             document.body.style.backgroundImage =
               "url('" + e.target.result + "')";
           };
