@@ -300,9 +300,6 @@ include "auth-mount-equip.php";
 
 
                             </div>
-
-                            <img src="<?php echo $resultats['E_Chemin_Image'] ?>" class="photoMount"
-                                alt="Assets/equipement/default.jpg" />
                             <button class="read" type="button">Ajouter à mon inventaire</button>
 
 
