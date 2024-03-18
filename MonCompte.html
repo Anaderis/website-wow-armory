@@ -1,96 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
     <title>Mon Compte</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      input[type="submit"] {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      img {
-        max-width: 150px;
-        height: auto;
-        display: block;
-        margin-bottom: 20px;
-      }
-    </style>
+    -->
   </head>
-
   <body>
-    <header>
-      <nav id="menus">
-        <ul>
-          <li>
-            <a href="./wow-armory.html">
-              <img src="./Assets/logo.png" alt="World of warcraft" class="logo"
-            /></a>
-          </li>
-          <li><a href="./montures.html">Mounts </a></li>
-          <li><a href="./equipements.html">Equipments</a></li>
-          <li><a href="./map.html">Map</a></li>
-          <li><a href="./MonCompte.html">My account</a></li>
-            <input type="submit" name="submit" class="submit" value="Search" />
-          </li>
-          <li>
-            <a href="./login.html"
-              ><button class="login" type="button">Login</button></a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="container">
-      <h2>Mon Compte</h2>
-      <form action="traitement.php" method="post" enctype="multipart/form-data">
-        <!-- Champ pour le pseudo -->
-        <label for="pseudo">Modifier le pseudo :</label>
-        <input
-          type="text"
-          id="pseudo"
-          name="pseudo"
-          placeholder="Nouveau pseudo"
-        />
+    <h1>Mon Compte</h1>
+    <p>Votre adresse e-mail : <span id="email"></span></p>
+    <input type="file" accept="image/*" id="profilePicInput" />
+    <button onclick="changeProfilePicture()">Changer la photo de profil</button>
+    <script>
+      // Function pour update email address
+      function updateEmail() {
+        // Replace 'your_email@example.com' with the actual email address
+        document.getElementById("email").textContent = "your_email@example.com";
+      }
 
-        <!-- Champ pour l'image de profil -->
-        <label for="profil_pic">Changer la photo de profil :</label>
-        <input type="file" id="profil_pic" name="profil_pic" />
+      // appel fonction affichage email
+      updateEmail();
 
-        <!-- Champ caché pour l'ancien pseudo -->
-        <input type="hidden" name="old_pseudo" value="<?php echo $pseudo; ?>" />
-
-        <!-- Bouton de soumission -->
-        <input type="submit" value="Enregistrer les modifications" />
-      </form>
-    </div>
+      //fonction pour changer de photo de profil
+      function changeProfilePicture() {
+        var profilePicInput = document.getElementById("profilePicInput");
+        if (profilePicInput.files && profilePicInput.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            // Display the new profile picture (you can customize this part)
+            document.body.style.backgroundImage =
+              "url('" + e.target.result + "')";
+          };
+          reader.readAsDataURL(profilePicInput.files[0]);
+        }
+      }
+    </script>
   </body>
 </html>
