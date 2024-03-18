@@ -49,10 +49,8 @@ if (isset ($_SESSION["Loggedin"])) {
                             <?php
                             if ($id != 666) {
                                 echo $user;
-                            } else {
+                            }else{
                                 echo $user;
-                                echo "<br>";
-                                echo $id;
                             }
                             ?>
                         </h1>
@@ -75,11 +73,12 @@ if (isset ($_SESSION["Loggedin"])) {
                     echo '</div></div>';
 
                 } else {
-                    echo '<div>';
+                    echo '<div class="Joueur-conteneur ombre">
+                    <h1>Joueur</h1>
+                    <div class="text">';
 
-                    require_once "./PHP/MonCompte/conn-joueur.php";
-
-                    echo '</div>';
+                        require_once "./PHP/MonCompte/conn-joueur.php";
+                    echo '</div></div>';
                 } ?>
             </div>
         </div>

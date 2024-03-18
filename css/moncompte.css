@@ -93,7 +93,8 @@ nav img:hover{
 /* inventoryholder */
 
 .Monture-conteneur h1,
-.Equipement-conteneur h1{
+.Equipement-conteneur h1,
+.Joueur-conteneur h1{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -111,6 +112,15 @@ nav img:hover{
     align-items: center;
 }
 
+.Joueur-conteneur{
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: white;
+    border-radius: 5%;
+}
+
 .textMount{
     background-color: lightgrey;
     opacity: 0.8;
@@ -122,6 +132,7 @@ nav img:hover{
     grid-row-start: 2;
     grid-row-end: 3;
     background-color: white;
+    border-radius: 5%;
 }
 
 .Equipement-conteneur{
@@ -130,6 +141,7 @@ nav img:hover{
     grid-row-start: 2;
     grid-row-end: 3;
     background-color: white; 
+    border-radius: 5%;
 }
 
 
