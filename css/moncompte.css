@@ -55,7 +55,7 @@ nav img:hover{
 
 .profilhtml{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.5fr 0.5fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 0.75fr 0.75fr 1fr 1fr 1fr;
     grid-template-rows:  400px auto;
     gap: 20px;
 }
@@ -111,13 +111,17 @@ nav img:hover{
     align-items: center;
 }
 
+.textMount{
+    background-color: lightgrey;
+    opacity: 0.8;
+}
+
 .Monture-conteneur{
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
     background-color: white;
-    border-radius: 3%; 
 }
 
 .Equipement-conteneur{
@@ -126,7 +130,6 @@ nav img:hover{
     grid-row-start: 2;
     grid-row-end: 3;
     background-color: white; 
-    border-radius: 3%;
 }
 
 
