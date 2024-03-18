@@ -4,6 +4,7 @@ session_start();
 
 if(isset($_SESSION["Loggedin"])) {
     $user = $_SESSION["Loggedin"];
+    $id = $_SESSION["Id"];
 }
 ?>
 
@@ -45,10 +46,18 @@ if(isset($_SESSION["Loggedin"])) {
                     <div class="profilholder">
                         <img class="photo" src=<?php echo $_SESSION['Photo'] ?> alt="user" />
                         <h1>
-                            <?php echo $user ?>
+                            <?php 
+                                if($id != 666){
+                                    echo $user;
+                                }else{
+                                    echo $user;
+                                    echo $id;
+                                }
+                            ?>
                         </h1>
                     </div>
                 </div>
+                
                 <div class="Monture-conteneur ombre">
                     <h1>Monture</h1>
                     <div class="text">

@@ -66,33 +66,24 @@ include "auth-mount-equip.php";
                     </li>
                     <li><a href="./bdd-mount.php">Montures </a></li>
                     <li><a href="./equipements.php">Equipements</a></li>
-                    <?php 
-                        if(isset($_SESSION['Loggedin'])){
-                            echo '<a href="./MonCompte.php">Mon compte</a>';
-                        }else{
-                            echo '<a href="./login.php">Mon compte</button></a>';
-                        }
-                    ?>
-                </li>
                     <li>
-                    <?php
-                        if(isset($_SESSION['Loggedin'])){
-                            echo '<a href="./PHP/Login/logout.php">logout</a>';
-                        }else{}
+                        <?php 
+                            if(isset($_SESSION['Loggedin'])){
+                                echo '<a href="./MonCompte.php">' .$userpseudo.'</a>';
+                            }else{
+                                echo '<a href="./login.php">Mon compte</button></a>';
+                            }
                         ?>
                     </li>
                     <li>
-                    
-                    <?php 
-                       if(isset($_SESSION['Loggedin'])){
-                           echo '<a href="./moncompte.php"><button class="login" type="button">' . $userpseudo . '</button></a>';
-                       } else {
-                           echo '<a href="./login.php"><button class="login" type="button">Login</button></a>';
-                       }
-                    ?>
-                       
-
-                </li>
+                        <?php 
+                        if(isset($_SESSION['Loggedin'])){
+                            echo '<a href="./PHP/Login/logout.php"><button class="login" type="button">Logout</button></a>';
+                        } else {
+                            echo '<a href="./login.php"><button class="login" type="button">Login</button></a>';
+                        }
+                        ?>
+                    </li>
                 </ul>
 
             </nav>
