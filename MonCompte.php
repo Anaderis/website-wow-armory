@@ -2,7 +2,7 @@
 session_start();
 
 
-if(isset($_SESSION["Loggedin"])) {
+if (isset ($_SESSION["Loggedin"])) {
     $user = $_SESSION["Loggedin"];
     $id = $_SESSION["Id"];
 }
@@ -26,7 +26,7 @@ if(isset($_SESSION["Loggedin"])) {
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
-    
+
 
 
 </head>
@@ -46,34 +46,41 @@ if(isset($_SESSION["Loggedin"])) {
                     <div class="profilholder">
                         <img class="photo" src=<?php echo $_SESSION['Photo'] ?> alt="user" />
                         <h1>
-                            <?php 
-                                if($id != 666){
-                                    echo $user;
-                                }else{
-                                    echo $user;
-                                    echo $id;
-                                }
+                            <?php
+                            if ($id != 666) {
+                                echo $user;
+                            } else {
+                                echo $user;
+                                echo "<br>";
+                                echo $id;
+                            }
                             ?>
                         </h1>
                     </div>
                 </div>
-                
-                <div class="Monture-conteneur ombre">
+                <?php if ($id != 666) {
+
+                    echo '<div class="Monture-conteneur ombre">
                     <h1>Monture</h1>
-                    <div class="text">
-                        <?php
-                            require_once "./PHP/MonCompte/conn-monture.php";
-                        ?>
-                    </div>
+                    <div class="text">';
+                    require_once "./PHP/MonCompte/conn-monture.php";
+                    echo '</div>
                 </div>
                 <div class="Equipement-conteneur ombre">
                     <h1>Equipement</h1>
-                    <div class="text">
-                        <?php
-                            require_once "./PHP/MonCompte/conn-equipement.php";
-                        ?>
-                    </div>
-                </div>
+                    <div class="text">';
+
+                    require_once "./PHP/MonCompte/conn-equipement.php";
+
+                    echo '</div></div>';
+
+                } else {
+                    echo '<div>';
+
+                    require_once "./PHP/MonCompte/conn-joueur.php";
+
+                    echo '</div>';
+                } ?>
             </div>
         </div>
     </main>
