@@ -1,2 +1,2 @@
 # website-wow-armory
-Website to farm mounts and stuff on World of warcraft
+Website to farm mounts and equipments on World of warcraft. The database was creating using MySQL.
